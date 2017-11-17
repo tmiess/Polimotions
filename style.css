@@ -1,1 +1,5 @@
-
+#div1 {
+    border: solid 2px;
+    max-width: 400px;
+    height: 500px;
+}
