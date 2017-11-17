@@ -1,38 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="us-en">
 
 <head>
-    <meta charset="UTC-8">
-    <title>Face++ API</title>
+    <title>Polimotions</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-
 </head>
 
 <body>
-    <script type="text/javascript">
-        var imageURL = "http://www.history.com/s3static/video-thumbnails/AETN-History_VMS/493/643/BRAND_THC_BSFC_180742_SFM_000_2997_15_20151204_00_HD.jpg";
-        console.log(imageURL);
+    <nav>
+        <div class="nav-wrapper #42a5f5 blue lighten-1">
+            <a href="#" class="brand-logo right">Polimotions</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">JavaScript</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
+    <br>
+    <br>
 
-        var params = {
-            "api_key": "AKof96jqIYUIqbmI2TaF3-AJcURETpor",
-            "api_secret": "WbNCep4Ml1Ad_wTiItDTq7QhTEskPUYT",
-            "image_url": imageURL,
-            "return_attributes": "gender,age,emotion"
-        };
 
-        $.ajax({ url: queryURL, method: "POST", data: params })
+    <div class="container">
+        <div class="row">
 
-            .done(function(response) {
-                var results = response;
+            <div class="col m4">
+                <div class="input-field col m12">
+                    Type your search in here:<input id="search" type="search">
+                </div>
+                Search Form and intructions.
+            </div>
 
-                console.log(results);
+            <div class="col m4">
+                <span class="card-title"><strong>Face ++ Results</strong></span>
+                <p>Image Returns Face Analysis</p>
 
-            });
-    </script>
+                <div class="row">
+                    <div class="col m12">
+                        Information Here
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col m4">
+                Information from Voter Records
+            </div>
+
+        </div>
+    </div>
+
 </body>
-
 
 </html>
