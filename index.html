@@ -6,14 +6,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+    <!-- stylesheet links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Hammersmith+One|Julius+Sans+One|Patua+One|Philosopher:700|Righteous" rel="stylesheet">
+    
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
   
-    <!-- stylesheet links -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="assets/css/reset.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Bangers|Hammersmith+One|Julius+Sans+One|Patua+One|Philosopher:700|Righteous" rel="stylesheet">
+    <script>
+        (function() {
+            var cx = '003286135131530961110:1-owwwuu7cu';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>
+    <gcse:searchbox></gcse:searchbox>
+    <gcse:searchresults defaultToImageSearch="true"></gcse:searchresults>
+    </script>
 </head>
 
 <body>
@@ -34,6 +50,7 @@
     
     <!-- Content: Search Form and Div, Image Div with Analysis Div Below, News Results Div-->
     <div class="container">
+      <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         <div class="row">
           
             <!-- Search Form with Instructions Div, Submit Button, and Clear Button -->
@@ -68,9 +85,10 @@
 
         </div>
     </div>
-  
+
 <script type="text/javascript" src="newsAPI.js"></script>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script.js"></script>
   
 </body>
 
