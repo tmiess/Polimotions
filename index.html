@@ -1,80 +1,75 @@
-<!--<!DOCTYPE html>-->
+<!DOCTYPE html>
 
-<!--<html lang="en">-->
-
-
-<!--<head>-->
+<html lang="en">
 
 
-<!--    <meta charset="utf-8">-->
-
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<head>
 
 
+    <meta charset="utf-8">
 
-<!--<link rel="stylesheet" href="assets/css/reset.css" type="text/css" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!--bootstrap link goes here-->
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <!--<link rel="stylesheet" href="assets/css/reset.css" type="text/css" />-->
+    <!--bootstrap link goes here-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--google fonts goes here-->
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Hammersmith+One|Julius+Sans+One|Patua+One|Philosopher:700|Righteous" rel="stylesheet">
 
-<!--google fonts goes here-->
-<!--    <link href="https://fonts.googleapis.com/css?family=Bangers|Hammersmith+One|Julius+Sans+One|Patua+One|Philosopher:700|Righteous" rel="stylesheet">-->
+    <link rel="stylesheet" href="style.css" type="text/css" />
 
-<!--    <link rel="stylesheet" href="style.css" type="text/css" />-->
-
-<!--    <title>Title</title>-->
-
-
-<!--</head>-->
+    <title>Title</title>
 
 
-<!--<body>-->
-
-<!--    <div class="container">-->
-
-<!--        <div class="row">-->
-<!--            <form role="form">-->
-<!-- Here we create the text box for capturing the search term-->
-<!--                <div class="form-group">-->
-<!--                    <label for="search">Search Term:</label>-->
-<!--                    <input type="text" class="form-control" id="search-term">-->
-<!--                </div>-->
-
-<!-- Here we have our final submit button -->
-<!--                <button type="submit" class="btn btn-default" id="run-search"><i class="fa fa-search"></i>Search</button>-->
-<!--                <button type="button" class="btn btn-default" id="clear-all"><i class="fa fa-trash"></i>Clear Results</button>-->
-<!--            </form>-->
-<!--        </div>-->
-
-<!-- This row will handle all of the retrieved articles -->
-<!--        <div class="row">-->
-<!--            <div class="col-sm-12">-->
-<!--                <br>-->
-
-<!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
-<!--                <div class="panel panel-primary">-->
-
-<!-- Panel Heading for the retrieved articles box -->
-<!--                    <div class="panel-heading">-->
-<!--                        <h3 class="panel-title"><strong><i class="fa fa-table"></i>Top Articles</strong></h3>-->
-<!--                    </div>-->
-
-<!-- This main panel will hold each of the resulting articles -->
-<!--                    <div class="panel-body" id="well-section">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--    </div>-->
-
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-
-<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-
-<!--    <script type="text/javascript" src="newsAPI.js"></script>-->
-
-<!--</body>-->
+</head>
 
 
-<!--</html>-->
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <form role="form">
+                <!--Here we create the text box for capturing the search term-->
+                <div class="form-group">
+                    <label for="search">Search Term:</label>
+                    <input type="text" class="form-control" id="search-term">
+                </div>
+
+                <!--Here we have our final submit button-->
+                <button type="submit" class="btn btn-default" id="run-search"><i class="fa fa-search"></i>Search</button>
+                <button type="button" class="btn btn-default" id="clear-all"><i class="fa fa-trash"></i>Clear Results</button>
+            </form>
+        </div>
+
+        <!--This row will handle all of the retrieved articles-->
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+                <!--This panel will initially be made up of a panel and wells for each of the articles retrieved-->
+                <div class="panel panel-primary">
+
+                    <!--Panel Heading for the retrieved articles box-->
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong><i class="fa fa-table"></i>Top Articles</strong></h3>
+                    </div>
+
+                    <!--This main panel will hold each of the resulting articles-->
+                    <div class="panel-body" id="well-section">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="newsAPI.js"></script>
+
+</body>
+
+
+</html>
