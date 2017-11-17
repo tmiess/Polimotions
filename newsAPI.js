@@ -3,6 +3,8 @@
 //api key: a3b7c632d41e45bcb47ccc17698fb653
 //api key is built into the links they gave me on NEWS API site
 
+//get title from the image they chose and put that into the URL
+
 function AJAXquery(queryURL) {
     console.log("3/8 new queryURL is: " + queryURL);
     $.ajax({
