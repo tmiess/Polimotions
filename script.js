@@ -32,7 +32,7 @@ var config = {
 firebase.initializeApp(config);
 
 //FACE++ API
-var imageURL = "http://www.history.com/s3static/video-thumbnails/AETN-History_VMS/493/643/BRAND_THC_BSFC_180742_SFM_000_2997_15_20151204_00_HD.jpg";
+var imageURL = "http://snworksceo.imgix.net/dth/e61af942-43f3-428e-8feb-821643fcb3fc.sized-1000x1000.jpeg";
 console.log(imageURL);
 
 var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
@@ -41,7 +41,7 @@ var params = {
     "api_key": "AKof96jqIYUIqbmI2TaF3-AJcURETpor",
     "api_secret": "WbNCep4Ml1Ad_wTiItDTq7QhTEskPUYT",
     "image_url": imageURL,
-    "return_attributes": "gender,age,emotion"
+    "return_attributes": "gender,age,emotion",
 };
 
 $.ajax({ url: queryURL, method: "POST", data: params })
