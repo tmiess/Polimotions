@@ -20,7 +20,7 @@ function AJAXquery(queryURL) {
             // Create the HTML well (section) and add the article content for each
             var wellSection = $("<div>");
             wellSection.addClass("well");
-            wellSection.attr("id", "article-well-" + i);
+            wellSection.attr("id", "articleWell-" + i);
             $("#well-section").append(wellSection);
 
             console.log("6/8 article is: " + result.articles[i]);
@@ -45,7 +45,7 @@ $("#run-search").on("click", function(event) {
 
     $("#well-section").empty();
 
-    var searchTerm = $("#search-term").val().trim();
+    var searchTerm = $("#searchTerm").val().trim();
     console.log("search term is: " + searchTerm);
     var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&from=2017-11-15&sortBy=popularity&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
 
