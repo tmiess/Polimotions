@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="us-en">
 
 <head>
-    <meta charset="utf-8">
+    <title>Polimotions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- stylesheet links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css" type="text/css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Hammersmith+One|Julius+Sans+One|Patua+One|Philosopher:700|Righteous" rel="stylesheet">
+
+    <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
     <script>
         (function() {
             var cx = '003286135131530961110:1-owwwuu7cu';
@@ -23,6 +34,63 @@
 </head>
 
 <body>
-    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <!-- NavBar -->
+    <nav>
+        <div class="nav-wrapper #42a5f5 blue lighten-1">
+            <a href="#" class="brand-logo right">Polimotions</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">JavaScript</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+
+    <!-- Content: Search Form and Div, Image Div with Analysis Div Below, News Results Div-->
+    <div class="container">
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="row">
+
+            <!-- Search Form with Instructions Div, Submit Button, and Clear Button -->
+            <div class="col m4">
+                <div class="input-field col m12">
+                    Type your search in here:<input id="searchTerm" type="search">
+                </div>Search Form and intructions.</div>
+
+            <!-- Submit Button -->
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+
+            <!-- Renee to add Clear Button Here -->
+
+            <!--Image Div and Face++ Analysis Div Below -->
+            <div class="col m4">
+                <span class="card-title"><strong>Face ++ Results</strong></span>
+                <p>Image Returns Face Analysis</p>
+
+                <div class="row">
+                    <div class="col m12">
+                        Information Here
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Article Return Div -->
+            <div class="col m4">
+                <h3><strong><i class="fa fa-table"></i>Top Articles</strong></h3>
+                <p>Information from Voter Records</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="newsAPI.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
 </body>
-<script src="script.js"></script>
+
+</html>
