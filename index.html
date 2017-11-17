@@ -5,8 +5,26 @@
     <title>Polimotions</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script>
+        (function() {
+            var cx = '003286135131530961110:1-owwwuu7cu';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>
+    <gcse:searchbox></gcse:searchbox>
+    <gcse:searchresults defaultToImageSearch="true"></gcse:searchresults>
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
 </head>
 
 <body>
@@ -26,6 +44,7 @@
 
 
     <div class="container">
+      <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         <div class="row">
 
             <div class="col m4">
@@ -53,6 +72,10 @@
 
         </div>
     </div>
+  
+<script src="script.js"></script>
+
 </body>
 
 </html>
+
