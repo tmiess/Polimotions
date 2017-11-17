@@ -16,35 +16,39 @@ $(document).on("mouseover", function() {
 //     var data = ev.dataTransfer.getData("text");
 //     ev.target.appendChild(document.getElementById(data));
 // }
-=======
- // Initialize Firebase
- /* global firebase */
 
- var config = {
-     apiKey: "AIzaSyA04Li4Y2BJ6O54i1Tm3VgZx6XX1JibX1c",
-     authDomain: "polimotions.firebaseapp.com",
-     databaseURL: "https://polimotions.firebaseio.com",
-     projectId: "polimotions",
-     storageBucket: "polimotions.appspot.com",
-     messagingSenderId: "920170050300"
- };
+// Initialize Firebase
+/* global firebase */
 
- firebase.initializeApp(config);
+var config = {
+    apiKey: "AIzaSyA04Li4Y2BJ6O54i1Tm3VgZx6XX1JibX1c",
+    authDomain: "polimotions.firebaseapp.com",
+    databaseURL: "https://polimotions.firebaseio.com",
+    projectId: "polimotions",
+    storageBucket: "polimotions.appspot.com",
+    messagingSenderId: "920170050300"
+};
 
- //FACE++ API
- var imageURL = "http://cdn.history.com/sites/2/2013/11/George_Washington-AB.jpeg";
+firebase.initializeApp(config);
 
- var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=AKof96jqIYUIqbmI2TaF3-AJcURETpor&api_secret=WbNCep4Ml1Ad_wTiItDTq7QhTEskPUYT&image_url=" + imageURL + "&return_attributes=gender,age,emotion";
+//FACE++ API
+var imageURL = "http://www.history.com/s3static/video-thumbnails/AETN-History_VMS/493/643/BRAND_THC_BSFC_180742_SFM_000_2997_15_20151204_00_HD.jpg";
+console.log(imageURL);
 
- console.log(imageURL);
+var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
 
- $.ajax({ url: queryURL, method: "GET" })
+var params = {
+    "api_key": "AKof96jqIYUIqbmI2TaF3-AJcURETpor",
+    "api_secret": "WbNCep4Ml1Ad_wTiItDTq7QhTEskPUYT",
+    "image_url": imageURL,
+    "return_attributes": "gender,age,emotion"
+};
 
-     .done(function(response) {
-         var results = response.data;
+$.ajax({ url: queryURL, method: "POST", data: params })
 
-         console.log(results);
+    .done(function(response) {
+        var results = response;
 
-     });
- 
+        console.log(results);
 
+    });
