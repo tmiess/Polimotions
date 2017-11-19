@@ -11,14 +11,31 @@ function AJAXquery(queryURL) {
         url: queryURL,
         method: 'GET',
     }).done(function(result) {
-        console.log("4/8 URL: " + queryURL);
-        console.log("5/8 " + result);
+
 
         // Loop through and provide the correct number of articles
         for (var i = 0; i < 5; i++) {
-            var article = result.articles[i].title;
-            console.log("Testing " + article);
-            $(".title").text(article);
+
+            var title = result.articles[i].title;
+            //title.attr("id", "articleWell-" + i);
+
+
+            //$("#articleWell-" + i)
+            //    .append("<p> " + result.articles[i].title + "</p>");
+            console.log("TESTING " + title);
+
+            $(".title").text(result.articles[2].title)
+
+
+
+
+
+
+            //$("#articleWell-" + i)
+            //    .append("<a href='" + result.articles[i].url + "'>" +
+            //        result.articles[i].url + "</a>"
+            //   );
+
 
 
         }
@@ -53,11 +70,15 @@ function AJAXquery(queryURL) {
 
 */
 
+$(".collapsible").on("click", ".collapsible", function() {
+    $('.collapsible').collapsible();
+});
+
 $("#run-search").on("click", function(event) {
     console.log("1/8 button works");
     event.preventDefault();
 
-    //  $("#well-section").empty();
+    //$("#well-section").empty();
 
     var searchTerm = $("#searchTerm").val().trim();
     console.log("search term is: " + searchTerm);
