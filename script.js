@@ -43,7 +43,10 @@ var config = {
 firebase.initializeApp(config);
 
 //FACE++ API
-var imageURL = "http://snworksceo.imgix.net/dth/e61af942-43f3-428e-8feb-821643fcb3fc.sized-1000x1000.jpeg";
+// $(".analysisButton").on("click", function() {
+//     $("#analysisDiv").empty();
+
+var imageURL = "http://cdn.history.com/sites/2/2013/11/George_Washington-AB.jpeg";
 console.log(imageURL);
 
 var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
@@ -59,7 +62,47 @@ $.ajax({ url: queryURL, method: "POST", data: params })
 
     .done(function(response) {
         var results = response;
-
         console.log(results);
 
+        var analysis = $("#analysisDiv");
+
+        // variables to catch emotions
+        var sadness = results.faces[0].attributes.emotion.sadness;
+        var neutral = results.faces[0].attributes.emotion.neutral;
+        var disgust = results.faces[0].attributes.emotion.disgust;
+        var anger = results.faces[0].attributes.emotion.anger;
+        var surprise = results.faces[0].attributes.emotion.surprise;
+
+        // variables to catch age and gender
+        var age = results.faces[0].attributes.age.value;
+        var gender = results.faces[0].attributes.gender.value;
+
+        // create paragraph elements for each emotion, age, and gender
+        var p1 = $("<p>").text("Emotion: ");
+        var p2 = $("<p>").text("Sadness: " + sadness);
+        var p3 = $("<p>").text("Neutral: " + neutral);
+        var p4 = $("<p>").text("Disgust: " + disgust);
+        var p5 = $("<p>").text("Anger: " + anger);
+        var p6 = $("<p>").text("Surprise: " + surprise);
+        // age and gender
+        var p7 = $("<p>").text("Age: " + age);
+        var p8 = $("<p>").text("Gender: " + gender);
+
+
+        // append paragraphs into analysisDiv
+        analysis.append(p1);
+        analysis.append(p2);
+        analysis.append(p3);
+        analysis.append(p4);
+        analysis.append(p5);
+        analysis.append(p6);
+        analysis.append(p7);
+        analysis.append(p8);
+
+        var image = $("<img>").attr("src", imageURL);
+        var imagePlace = $("#div1");
+
+        imagePlace.append(image);
+
     });
+// });
