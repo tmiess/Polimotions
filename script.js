@@ -42,6 +42,33 @@ var config = {
 
 firebase.initializeApp(config);
 
+// var db = firebase.database();
+// $("#run-search").on("click", function(event) {
+//     event.preventDefault();
+
+//     var recentSearch = $("#searchTerm").val().trim();
+
+//     db.ref().push({
+//         recentSearch: recentSearch,
+//     });
+
+//     console.log(recentSearch);
+
+//     $("#searchTerm").val("");
+// });
+
+// db.ref().on("child_added", function(childSnapshot, prevChildKey) {
+//     console.log(childSnapshot.val());
+
+//     var recentSearch = childSnapshot.val().recentSearch;
+//     var newDiv = $('<div>');
+//     newDiv.append($('<p>').text(recentSearch));
+// });
+
+
+
+
+
 //FACE++ API
 // $(".analysisButton").on("click", function() {
 //     $("#analysisDiv").empty();
