@@ -26,7 +26,7 @@ function AJAXquery(queryURL) {
             console.log("6/8 article is: " + result.articles[i]);
 
             $("#articleWell-" + i)
-                .append("<h5>Section: " + result.articles[i].title + "</h5>");
+                .append("<h5>" + result.articles[i].title + "</h5>");
             console.log("7/8 title is: " + result.articles[i].title);
 
             $("#articleWell-" + i)
