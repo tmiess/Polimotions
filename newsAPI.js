@@ -23,6 +23,7 @@ function AJAXquery(queryURL) {
             $(".title4").text(result.articles[3].title);
             $(".title5").text(result.articles[4].title);
 
+
         }
 
     });

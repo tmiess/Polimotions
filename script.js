@@ -43,10 +43,14 @@ var config = {
 firebase.initializeApp(config);
 
 //FACE++ API
+
+var imageURL = "http://epilepsyu.com/wp-content/uploads/2014/01/happy-people-1050x600.jpg";
+
 // $(".analysisButton").on("click", function() {
 //     $("#analysisDiv").empty();
 
 var imageURL = "http://cdn.history.com/sites/2/2013/11/George_Washington-AB.jpeg";
+
 console.log(imageURL);
 
 var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
