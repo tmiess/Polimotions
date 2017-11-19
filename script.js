@@ -43,7 +43,7 @@ var config = {
 firebase.initializeApp(config);
 
 //FACE++ API
-var imageURL = "http://snworksceo.imgix.net/dth/e61af942-43f3-428e-8feb-821643fcb3fc.sized-1000x1000.jpeg";
+var imageURL = "http://epilepsyu.com/wp-content/uploads/2014/01/happy-people-1050x600.jpg";
 console.log(imageURL);
 
 var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
