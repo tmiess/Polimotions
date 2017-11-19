@@ -16,27 +16,12 @@ function AJAXquery(queryURL) {
         // Loop through and provide the correct number of articles
         for (var i = 0; i < 5; i++) {
 
-            var title = result.articles[i].title;
-            //title.attr("id", "articleWell-" + i);
-
-
-            //$("#articleWell-" + i)
-            //    .append("<p> " + result.articles[i].title + "</p>");
-            console.log("TESTING " + title);
-
-            $(".title").text(result.articles[2].title)
-
-
-
-
-
-
-            //$("#articleWell-" + i)
-            //    .append("<a href='" + result.articles[i].url + "'>" +
-            //        result.articles[i].url + "</a>"
-            //   );
-
-
+            //Attaching each article to a collapsible header.
+            $(".title1").text(result.articles[0].title);
+            $(".title2").text(result.articles[1].title);
+            $(".title3").text(result.articles[2].title);
+            $(".title4").text(result.articles[3].title);
+            $(".title5").text(result.articles[4].title);
 
         }
 
@@ -70,9 +55,6 @@ function AJAXquery(queryURL) {
 
 */
 
-$(".collapsible").on("click", ".collapsible", function() {
-    $('.collapsible').collapsible();
-});
 
 $("#run-search").on("click", function(event) {
     console.log("1/8 button works");
