@@ -7,6 +7,7 @@
     width: auto;
     padding-left: 20px;
     padding-right: 20px;
+    margin: 0px;
 }
 
 
@@ -18,13 +19,11 @@
 }
 
 .box {
-    display: none;
-    width: 500px;
-    height: 500px;
-
-    height: 500px;
-
+    display: block;
+    width: 100%;
+    height: 750px;
 }
+
 
 img {
     width: 100%;
@@ -33,22 +32,6 @@ img {
 
 .btn {
     margin-bottom: 10px;
-}
-
-
-.tap-target {
-    background-color: #42a5f5;
-
-}
-
-.tap-target-wrapper {}
-
-#searchTerm {
-    border-bottom-color: #42a5f5;
-}
-
-#run-search {
-    background-color: #42a5f5;
 }
 
 /*a:hover+.box,*/
