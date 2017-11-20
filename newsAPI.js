@@ -27,43 +27,11 @@ function AJAXquery(queryURL) {
             $("#title" + i).text(result.articles[i].title);
             $("#article" + i).empty().append(articleSection)
 
-            // $("#article1").src(result.articles[0].url);
-            // $("#article2").src(result.articles[1].url);
-            // $("#article3").src(result.articles[2].url);
-            // $("#article4").src(result.articles[3].url);
-            // $("#article5").src(result.articles[4].url);
+            console.log("6/8 article is: " + result.articles[i]);
 
-            // /// Create the HTML well (section) and add the article content for each
-            // var wellSection = $("<div>");
-            // var articleSection = $("<iframe>");
+            console.log("7/8 title is: " + result.articles[i].title);
 
-            // wellSection.addClass("well");
-            // wellSection.attr("id", "articleWell-" + i);
-
-            // articleSection.addClass("box");
-            // articleSection.attr("src", result.articles[i].url);
-            // articleSection.attr("frameborder", 0);
-            // articleSection.attr("scrolling", "yes");
-
-            // console.log(articleSection);
-
-            // $("#well-section").append(wellSection);
-
-            // console.log("6/8 article is: " + result.articles[i]);
-
-            // $("#articleWell-" + i)
-            //     .append("<h5>" + result.articles[i].title + "</h5>");
-            // console.log("7/8 title is: " + result.articles[i].title);
-
-            // $("#articleWell-" + i)
-            //     .append("<a href='" + result.articles[i].url + "'>" +
-            //         result.articles[i].url + "</a>"
-            //     );
-
-            // $("#articleWell-" + i)
-            //     .append(articleSection);
-
-            // console.log("8/8 url is: " + result.articles[i].url);
+            console.log("8/8 url is: " + result.articles[i].url);
 
         }
     });
