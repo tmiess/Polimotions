@@ -1,32 +1,4 @@
-//IMAGE SEARCH
-// $(document).on("click", function() {
-//     $("img").attr("draggable", "true");
-//     $("img").attr("ondragstart", "drag(event)");
-//     console.log("Dragged");
-// });
-// $(document).on("click", function() {
-//     $("img").attr("id", "drag1");
-//     console.log("where is the picture")
-
-// });
-// function allowDrop(ev) {
-//     ev.preventDefault();
-// }
-
-// function drag(ev) {
-//     ev.dataTransfer.setData("text", ev.target.id);
-//     console.log("Hey");
-// }
-
-
-// function drop(ev) {
-//     ev.preventDefault();
-//     var data = ev.dataTransfer.getData("text");
-//     ev.target.appendChild(document.getElementById(data));
-//     console.log("Hi");
-// }
-
-//DROPBOX
+//IMAGE DROPBOX
 var dropbox = document.getElementById("dropbox");
 dropbox.addEventListener("dragenter", noopHandler, false);
 dropbox.addEventListener("dragexit", noopHandler, false);
@@ -47,9 +19,6 @@ function drop(evt) {
     $("#dropbox").prepend('<img src="' + imageLink + '">');
     console.log('<img src="' + imageLink + '">');
 }
-
-
-
 
 // Initialize Firebase
 /* global firebase */
@@ -89,9 +58,6 @@ db.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
     $("#searches").append(newDiv);
 });
-
-
-
 
 
 //FACE++ API
