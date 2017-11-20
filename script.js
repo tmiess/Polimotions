@@ -39,7 +39,7 @@ $("#run-search").on("click", function(event) {
     event.preventDefault();
 
     var recentSearch = $("#searchTerm").val().trim();
-
+    $("#name").text(recentSearch);
     db.ref().push({
         recentSearch: recentSearch,
     });
@@ -49,14 +49,14 @@ $("#run-search").on("click", function(event) {
     $("#searchTerm").val("");
 });
 
-db.ref().on("child_added", function(childSnapshot, prevChildKey) {
+db.ref().limitToLast(6).on("child_added", function(childSnapshot, prevChildKey) {
     console.log(childSnapshot.val());
 
     var recentSearch = childSnapshot.val().recentSearch;
     var newDiv = $('<div>');
     newDiv.append($('<p>').text(recentSearch));
 
-    $("#searches").append(newDiv);
+    $("#searches").prepend(newDiv);
 });
 
 
