@@ -13,17 +13,8 @@
 }
 
 .box {
-    display: none;
-    width: 500px;
-    height: 500px;
-
-}
-
-
     display: block;
-
     width: 100%;
-
     height: 750px;
 }
 
@@ -48,4 +39,3 @@ img {
 /*    z-index: 100;*/
 
 /*}*/
-
