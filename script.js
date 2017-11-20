@@ -42,28 +42,30 @@ var config = {
 
 firebase.initializeApp(config);
 
-// var db = firebase.database();
-// $("#run-search").on("click", function(event) {
-//     event.preventDefault();
+var db = firebase.database();
+$("#run-search").on("click", function(event) {
+    event.preventDefault();
 
-//     var recentSearch = $("#searchTerm").val().trim();
+    var recentSearch = $("#searchTerm").val().trim();
 
-//     db.ref().push({
-//         recentSearch: recentSearch,
-//     });
+    db.ref().push({
+        recentSearch: recentSearch,
+    });
 
-//     console.log(recentSearch);
+    console.log(recentSearch);
 
-//     $("#searchTerm").val("");
-// });
+    $("#searchTerm").val("");
+});
 
-// db.ref().on("child_added", function(childSnapshot, prevChildKey) {
-//     console.log(childSnapshot.val());
+db.ref().limitToLast(6).on("child_added", function(childSnapshot, prevChildKey) {
+    console.log(childSnapshot.val());
 
-//     var recentSearch = childSnapshot.val().recentSearch;
-//     var newDiv = $('<div>');
-//     newDiv.append($('<p>').text(recentSearch));
-// });
+    var recentSearch = childSnapshot.val().recentSearch;
+    var newDiv = $('<div>');
+    newDiv.append($('<p>').text(recentSearch));
+
+    $("#searches").prepend(newDiv);
+});
 
 
 
