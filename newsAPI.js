@@ -37,10 +37,8 @@ function AJAXquery(queryURL) {
     });
 }
 
-<<
-<< << < HEAD
-    *
-    /
+
+
 
 $("#menu").on("click", function() {
 
