@@ -19,8 +19,18 @@ function AJAXquery(queryURL) {
 
             // Create the HTML well (section) and add the article content for each
             var wellSection = $("<div>");
+            var articleSection = $("<iframe>");
+
             wellSection.addClass("well");
             wellSection.attr("id", "articleWell-" + i);
+
+            articleSection.addClass("box");
+            articleSection.attr("src", result.articles[i].url);
+            articleSection.attr("frameborder", 0);
+            articleSection.attr("scrolling", "yes");
+
+            console.log(articleSection);
+
             $("#well-section").append(wellSection);
 
             console.log("6/8 article is: " + result.articles[i]);
@@ -33,6 +43,10 @@ function AJAXquery(queryURL) {
                 .append("<a href='" + result.articles[i].url + "'>" +
                     result.articles[i].url + "</a>"
                 );
+
+            $("#articleWell-" + i)
+                .append(articleSection);
+
             console.log("8/8 url is: " + result.articles[i].url);
 
         }
@@ -47,7 +61,8 @@ $("#run-search").on("click", function(event) {
 
     var searchTerm = $("#searchTerm").val().trim();
     console.log("search term is: " + searchTerm);
-    var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&from=2017-11-15&sortBy=popularity&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
+    var searchTerm = searchTerm.replace(/\s+/g, '%20');
+    var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&from=2014-11-15&sortBy=popularity&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
 
     console.log("2/8 search url is: " + searchURL);
 
