@@ -1,10 +1,10 @@
 //IMAGE SEARCH
-$(document).on("mouseover", function() {
+$(document).on("click", function() {
     $("img").attr("draggable", "true");
     $("img").attr("ondragstart", "drag(event)");
     console.log("Dragged");
 });
-$(document).on("mousedown", function() {
+$(document).on("click", function() {
     $("img").attr("id", "drag1");
     console.log("where is the picture")
 
