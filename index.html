@@ -56,7 +56,9 @@
         <div class="row">
 
             <!-- Search Form with Instructions Div, Submit Button, and Clear Button -->
-            <div class="col m3">
+
+            <div class="col m2">
+
                 <div class="input-field col m12">
 
                     Type your search in here:<input id="searchTerm" type="search">
@@ -73,127 +75,132 @@
 
             </div>
 
-
-            <!-- Submit Button -->
-
-
-            <!-- Renee to add Clear Button Here -->
-
             <!--Image Div and Face++ Analysis Div Below -->
-            <div class="col m5">
 
-                <span class="card-title"><strong>
+            <div class="col m4">
+
+
+                <!--Image Div and Face++ Analysis Div Below -->
+                <div class="col m5">
+
+                    <span class="card-title"><strong>
                     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                 </strong></span>
 
-                <div class="row">
-                    <div id="analysisDiv" class="col m12">
+                    <div class="row">
+                        <div id="analysisDiv" class="col m12">
 
 
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Analysis: </th>
-                                </tr>
-                            </thead>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Analysis: </th>
+                                    </tr>
+                                </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td>Age:</td>
-                                    <td>Gender:</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Sadness:
-                                        <span id="sad"></span>
-                                    </td>
-                                    <td>
-                                        Neutral:
-                                        <span id="neutral"></span>
-                                    </td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>Age:</td>
+                                        <td>Gender:</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Sadness:
+                                            <span id="sad"></span>
+                                        </td>
+                                        <td>
+                                            Neutral:
+                                            <span id="neutral"></span>
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td>
-                                        Disgust:
-                                        <span id="disgust"></span>
-                                    </td>
-                                    <td>
-                                        Anger:
-                                        <span id="anger"></span>
-                                    </td>
-                                    <td>
-                                        Surprise:
-                                        <span id="surprise"></span>
-                                    </td>
-                            </tbody>
-                        </table>
+                                    <tr>
+                                        <td>
+                                            Disgust:
+                                            <span id="disgust"></span>
+                                        </td>
+                                        <td>
+                                            Anger:
+                                            <span id="anger"></span>
+                                        </td>
+                                        <td>
+                                            Surprise:
+                                            <span id="surprise"></span>
+                                        </td>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Article Return Div -->
+
+                <div class="col m4" id="well-section">
+                    <div class="row">
+                        <div class="col m12">
+                            <h3><strong>Top Articles</strong></h3>
+                        </div>
+                    </div>
+
+                    <h3><strong><i class="fa fa-table"></i></strong></h3>
+
+
+                    <div class="col m6" id="well-section">
+                        <h4><strong><i class="fa fa-table"></i>Top Articles</strong></h4>
+
+
+                        <!--  Experimenting with collapsible tables -->
+
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">add</i>
+                                    <p id="title0"></p>
+                                </div>
+                                <div id="article0" class="collapsible-body"></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">add</i>
+                                    <p id="title1"></p>
+                                </div>
+                                <div id="article1" class="collapsible-body"></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">add</i>
+                                    <p id="title2"></p>
+                                </div>
+                                <div id="article2" class="collapsible-body"></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">add</i>
+                                    <p id="title3"></p>
+                                </div>
+                                <div id="article3" class="collapsible-body"></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">add</i>
+                                    <p id="title4"></p>
+                                </div>
+                                <div id="article4" class="collapsible-body"></div>
+                            </li>
+                        </ul>
+
+
 
 
                     </div>
-                </div>
 
+                </div>
             </div>
 
-            <!-- Article Return Div -->
-            <div class="col m4" id="well-section">
-                <div class="row">
-                    <div class="col m12">
-                        <h3><strong>Top Articles</strong></h3>
-                    </div>
-                </div>
 
-                <h3><strong><i class="fa fa-table"></i></strong></h3>
-
-                <!--  Experimenting with collapsible tables -->
-
-                <ul class="collapsible" data-collapsible="accordion">
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">add</i>
-                            <p class="title1"></p>
-                        </div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">add</i>
-                            <p class="title2"></p>
-                        </div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">add</i>
-                            <p class="title3"></p>
-                        </div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">add</i>
-                            <p class="title4"></p>
-                        </div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">add</i>
-                            <p class="title5"></p>
-                        </div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                </ul>
-
-
-
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <script type="text/javascript" src="newsAPI.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="newsAPI.js"></script>
+            <script type="text/javascript" src="newsAPI.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="script.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+            <script type="text/javascript" src="newsAPI.js"></script>
 
 </body>
 

@@ -1,3 +1,11 @@
+.container {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
 #div1 {
     border: solid 2px;
     max-width: 400px;
@@ -8,27 +16,34 @@
     display: none;
     width: 500px;
     height: 500px;
+
 }
 
-a:hover+.box,
-.box:hover {
-    display: block;
-    position: relative;
-    z-index: 100;
+
+display: block;
+
+width: 100%;
+
+height: 750px;
 }
 
-.container {
-    padding: 10px;
+
+img {
+    width: 100%;
+    height: auto;
 }
+
+.btn {
+    margin-bottom: 10px;
+}
+
 
 .tap-target {
     background-color: #42a5f5;
 
 }
 
-.tap-target-wrapper {
-    color: pink;
-}
+.tap-target-wrapper {}
 
 #searchTerm {
     border-bottom-color: #42a5f5;
@@ -37,3 +52,15 @@ a:hover+.box,
 #run-search {
     background-color: #42a5f5;
 }
+
+/*a:hover+.box,*/
+
+/*.box:hover {*/
+
+/*    display: block;*/
+
+/*    position: relative;*/
+
+/*    z-index: 100;*/
+
+/*}*/
