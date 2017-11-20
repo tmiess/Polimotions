@@ -1,3 +1,11 @@
+.container {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
 #div1 {
     border: solid 2px;
     max-width: 400px;
@@ -8,6 +16,7 @@
     display: none;
     width: 500px;
     height: 500px;
+
 }
 
 a:hover+.box,
@@ -15,4 +24,13 @@ a:hover+.box,
     display: block;
     position: relative;
     z-index: 100;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.btn {
+    margin-bottom: 10px;
 }
