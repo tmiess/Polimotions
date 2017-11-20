@@ -70,6 +70,14 @@ function AJAXquery(queryURL) {
 
 */
 
+$("#menu").on("click", function() {
+
+    $('.tap-target').tapTarget('open');
+
+})
+
+//$('.tap-target').tapTarget('close');
+
 
 $("#run-search").on("click", function(event) {
     console.log("1/8 button works");
