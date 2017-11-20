@@ -135,5 +135,11 @@ $.ajax({ url: queryURL, method: "POST", data: params })
 
         imagePlace.append(image);
 
+        $("#sad").text(sadness);
+        $("#neutral").text(neutral);
+        $("#disgust").text(disgust);
+        $("#anger").text(anger);
+        $("#surprise").text(surprise);
+
     });
 // });

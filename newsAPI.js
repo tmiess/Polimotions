@@ -11,13 +11,27 @@ function AJAXquery(queryURL) {
         url: queryURL,
         method: 'GET',
     }).done(function(result) {
-        console.log("4/8 URL: " + queryURL);
-        console.log("5/8 " + result);
+
 
         // Loop through and provide the correct number of articles
         for (var i = 0; i < 5; i++) {
 
-            // Create the HTML well (section) and add the article content for each
+            //Attaching each article to a collapsible header.
+            $(".title1").text(result.articles[0].title);
+            $(".title2").text(result.articles[1].title);
+            $(".title3").text(result.articles[2].title);
+            $(".title4").text(result.articles[3].title);
+            $(".title5").text(result.articles[4].title);
+
+
+        }
+
+    });
+}
+
+
+/*  Commenting out to test collapsing table
+// Create the HTML well (section) and add the article content for each
             var wellSection = $("<div>");
             wellSection.addClass("well");
             wellSection.attr("id", "articleWell-" + i);
@@ -28,6 +42,7 @@ function AJAXquery(queryURL) {
             $("#articleWell-" + i)
                 .append("<h5>Section: " + result.articles[i].title + "</h5>");
             console.log("7/8 title is: " + result.articles[i].title);
+            console.log("testing:" + result.articles[i].title);
 
             $("#articleWell-" + i)
                 .append("<a href='" + result.articles[i].url + "'>" +
@@ -39,11 +54,14 @@ function AJAXquery(queryURL) {
     });
 }
 
+*/
+
+
 $("#run-search").on("click", function(event) {
     console.log("1/8 button works");
     event.preventDefault();
 
-    $("#well-section").empty();
+    //$("#well-section").empty();
 
     var searchTerm = $("#searchTerm").val().trim();
     console.log("search term is: " + searchTerm);
