@@ -5,14 +5,23 @@
 }
 
 .box {
+
     display: none;
+
     width: 500px;
+
     height: 500px;
+
 }
 
-a:hover+.box,
-.box:hover {
-    display: block;
-    position: relative;
-    z-index: 100;
-}
+/*a:hover+.box,*/
+
+/*.box:hover {*/
+
+/*    display: block;*/
+
+/*    position: relative;*/
+
+/*    z-index: 100;*/
+
+/*}*/
