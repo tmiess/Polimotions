@@ -19,12 +19,14 @@
 
 }
 
-a:hover+.box,
-.box:hover {
+
     display: block;
-    position: relative;
-    z-index: 100;
+
+    width: 100%;
+
+    height: 750px;
 }
+
 
 img {
     width: 100%;
@@ -34,3 +36,16 @@ img {
 .btn {
     margin-bottom: 10px;
 }
+
+/*a:hover+.box,*/
+
+/*.box:hover {*/
+
+/*    display: block;*/
+
+/*    position: relative;*/
+
+/*    z-index: 100;*/
+
+/*}*/
+
