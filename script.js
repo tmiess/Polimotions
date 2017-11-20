@@ -1,32 +1,24 @@
-//IMAGE SEARCH
-$(document).on("mouseover", function() {
-    $("img").attr("draggable", "true");
-    $("img").attr("ondragstart", "drag(event)");
-    console.log("Dragged");
-});
-$(document).on("mousedown", function() {
-    $("img").attr("id", "drag1");
-    console.log("where is the picture")
+//IMAGE DROPBOX
+var dropbox = document.getElementById("dropbox");
+dropbox.addEventListener("dragenter", noopHandler, false);
+dropbox.addEventListener("dragexit", noopHandler, false);
+dropbox.addEventListener("dragover", noopHandler, false);
+dropbox.addEventListener("drop", drop, false);
 
-});
-
-function allowDrop(ev) {
-    ev.preventDefault();
+function noopHandler(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    console.log("Handler working")
 }
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-    console.log("Hey");
+function drop(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    var imageLink = evt.dataTransfer.getData('URL');
+    console.log(imageLink);
+    $("#dropbox").prepend('<img src="' + imageLink + '">');
+    console.log('<img src="' + imageLink + '">');
 }
-
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-    console.log("Hi");
-}
-
 
 // Initialize Firebase
 /* global firebase */
@@ -66,9 +58,6 @@ db.ref().limitToLast(6).on("child_added", function(childSnapshot, prevChildKey) 
 
     $("#searches").prepend(newDiv);
 });
-
-
-
 
 
 //FACE++ API
