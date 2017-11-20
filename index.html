@@ -29,7 +29,7 @@
             <ul id="nav-mobile" class="left hide-on-med-and-down">
 
                 <li>
-                    <a id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons">menu</i></a>
+                    <a id="menu" class="waves-effect waves-light btn btn-floating #42a5f5 blue lighten-1"><i class="material-icons">menu</i></a>
                     <div class="tap-target" data-activates="menu">
                         <div class="tap-target-content">
                             <h5>Title</h5>
@@ -63,12 +63,15 @@
                     <!-- Submit Button -->
                     <button class="btn waves-effect waves-light" id="run-search" type="submit" name="action">Submit</button>
 
-                </div>Search Form and intructions.
+                    <br>
+                    <br>
+                    <div>Recent Searches: </div>
+                    <p id="searches"></p>
+
+                </div>
+
 
             </div>
-
-            <div>Recent Searches: </div>
-            <p id="searches"></p>
 
 
             <!-- Submit Button -->
@@ -78,6 +81,7 @@
 
             <!--Image Div and Face++ Analysis Div Below -->
             <div class="col m5">
+
                 <span class="card-title"><strong>
                     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                 </strong></span>
@@ -138,6 +142,7 @@
                         <h3><strong>Top Articles</strong></h3>
                     </div>
                 </div>
+
                 <h3><strong><i class="fa fa-table"></i></strong></h3>
 
                 <!--  Experimenting with collapsible tables -->

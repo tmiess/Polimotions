@@ -21,8 +21,13 @@ a:hover+.box,
     padding: 10px;
 }
 
-#menu {
+.tap-target {
     background-color: #42a5f5;
+
+}
+
+.tap-target-wrapper {
+    color: pink;
 }
 
 #searchTerm {
