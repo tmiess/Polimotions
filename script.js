@@ -47,7 +47,7 @@ $("#run-search").on("click", function(event) {
     event.preventDefault();
 
     var recentSearch = $("#searchTerm").val().trim();
-
+    $("#name").text(recentSearch);
     db.ref().push({
         recentSearch: recentSearch,
     });
