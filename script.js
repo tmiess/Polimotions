@@ -42,6 +42,33 @@ var config = {
 
 firebase.initializeApp(config);
 
+// var db = firebase.database();
+// $("#run-search").on("click", function(event) {
+//     event.preventDefault();
+
+//     var recentSearch = $("#searchTerm").val().trim();
+
+//     db.ref().push({
+//         recentSearch: recentSearch,
+//     });
+
+//     console.log(recentSearch);
+
+//     $("#searchTerm").val("");
+// });
+
+// db.ref().on("child_added", function(childSnapshot, prevChildKey) {
+//     console.log(childSnapshot.val());
+
+//     var recentSearch = childSnapshot.val().recentSearch;
+//     var newDiv = $('<div>');
+//     newDiv.append($('<p>').text(recentSearch));
+// });
+
+
+
+
+
 //FACE++ API
 
 var imageURL = "http://epilepsyu.com/wp-content/uploads/2014/01/happy-people-1050x600.jpg";
@@ -107,6 +134,12 @@ $.ajax({ url: queryURL, method: "POST", data: params })
         var imagePlace = $("#div1");
 
         imagePlace.append(image);
+
+        $("#sad").text(sadness);
+        $("#neutral").text(neutral);
+        $("#disgust").text(disgust);
+        $("#anger").text(anger);
+        $("#surprise").text(surprise);
 
     });
 // });
