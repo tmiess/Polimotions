@@ -29,16 +29,18 @@ $(document).ready(function() {
         $("#dropbox").prepend('<img src="' + imageLink + '">');
         console.log('<img src="' + imageLink + '">');
     }
+    //DRAG GEORGE
+    // $(document).on("mousedown", function() {
+    //     var image = $('img').addClass("draggable");
+    //     console.log(image);
+    // });
 
-    $(document).on("mousedown", function() {
-        var image = $('img').addClass("draggable");
-        console.log(image);
-    });
+    // $(document).on("mousedown", function() {
+    //     $(".draggable").draggable();
+    //     console.log("Am I draggable?");
+    // });
 
-    $(document).on("mousedown", function() {
-        $(".draggable").draggable();
-        console.log("Am I draggable?");
-    });
+    $("#dragMe").draggable();
 
     //Clear Image Div
 
