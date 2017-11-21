@@ -1,3 +1,15 @@
+body {
+    background-image: url("images/brickwall.png");
+}
+
+.nav-wrapper {
+    background-color: black;
+}
+
+.navText {
+    color: white;
+}
+
 #name {
     text-align: center;
     font-size: 22px;
@@ -10,7 +22,11 @@
     margin: 0px;
 }
 
-
+#recent,
+th {
+    font-size: 18px;
+    font-weight: bold;
+}
 
 #div1 {
     border: solid 2px;
@@ -30,9 +46,25 @@ img {
     height: auto;
 }
 
+
 .btn {
     margin-bottom: 10px;
+    background-color: #ccc;
+    color: black;
 }
+
+#analysisButton {
+    margin-top: 10px;
+    background-color: #ccc;
+    color: black;
+}
+
+#emotions {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
 
 /*a:hover+.box,*/
 
