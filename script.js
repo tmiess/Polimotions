@@ -20,6 +20,14 @@ function drop(evt) {
     console.log('<img src="' + imageLink + '">');
 }
 
+//Clear Image Div
+
+$("#resetDiv").on("click", function() {
+    $("#dropbox").empty();
+});
+
+
+
 // Initialize Firebase
 /* global firebase */
 
