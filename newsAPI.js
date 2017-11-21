@@ -14,25 +14,34 @@ function AJAXquery(queryURL) {
         console.log(result);
 
         // Loop through and provide the correct number of articles
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < result.articles.length; i++) {
 
+            var newURL = result.articles[i].url;
+            var newTitle = result.articles[i].title;
 
-            var articleSection = $("<iframe>");
+            if (newURL.includes("http:")) {
+                console.log("http denied")
+                $("#" + i).remove();
+            }
 
-            articleSection.addClass("box");
-            articleSection.attr("src", result.articles[i].url);
-            articleSection.attr("frameborder", 0);
-            articleSection.attr("scrolling", "yes");
+            else {
+                var newDiv = $("")
+                var articleSection = $("<iframe>");
 
-            $("#title" + i).text(result.articles[i].title);
-            $("#article" + i).empty().append(articleSection)
+                articleSection.addClass("box");
+                articleSection.attr("src", newURL);
+                articleSection.attr("frameborder", 0);
+                articleSection.attr("scrolling", "yes");
 
-            console.log("6/8 article is: " + result.articles[i]);
+                $("#title" + i).text(result.articles[i].title);
+                $("#article" + i).empty().append(articleSection)
 
-            console.log("7/8 title is: " + result.articles[i].title);
+                console.log("6/8 article is: " + result.articles[i]);
 
-            console.log("8/8 url is: " + result.articles[i].url);
+                console.log("7/8 title is: " + newTitle);
 
+                console.log("8/8 url is: " + newURL);
+            }
         }
     });
 }
