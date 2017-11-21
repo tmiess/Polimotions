@@ -126,7 +126,7 @@ $(document).ready(function() {
         $("#surprise").val("");
         $("#div1").empty();
 
-        var imageURL = "http://cdn.history.com/sites/2/2013/11/George_Washington-AB.jpeg";
+        var imageURL = "https://cdn.history.com/sites/2/2013/11/George_Washington-AB.jpeg";
 
         console.log(imageURL);
 
