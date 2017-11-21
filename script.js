@@ -33,8 +33,12 @@ $(document).ready(function() {
     $(document).on("mousedown", function() {
         var image = $('img').addClass("draggable");
         console.log(image);
+    });
+
+    $(document).on("mousedown", function() {
         $(".draggable").draggable();
-    })
+        console.log("Am I draggable?");
+    });
 
     //Clear Image Div
 
