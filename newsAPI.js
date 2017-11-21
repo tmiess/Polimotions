@@ -11,11 +11,11 @@ function AJAXquery(queryURL) {
         url: queryURL,
         method: 'GET',
     }).done(function(result) {
-        console.log("4/8 URL: " + queryURL);
-        console.log("5/8 " + result);
+        console.log(result);
 
         // Loop through and provide the correct number of articles
         for (var i = 0; i < 5; i++) {
+
 
             var articleSection = $("<iframe>");
 

@@ -1,8 +1,38 @@
+
 $(document).ready(function() {
     var image = $("<img>").attr("src", "https://hyperallergic.com/wp-content/uploads/2016/12/whitehouseoldestphoto-720x527.jpg");
     var imagePlace = $("#div1");
 
     imagePlace.append(image);
+
+//IMAGE DROPBOX
+var dropbox = document.getElementById("dropbox");
+dropbox.addEventListener("dragenter", noopHandler, false);
+dropbox.addEventListener("dragexit", noopHandler, false);
+dropbox.addEventListener("dragover", noopHandler, false);
+dropbox.addEventListener("drop", drop, false);
+
+function noopHandler(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    console.log("Handler working")
+}
+
+function drop(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    var imageLink = evt.dataTransfer.getData('URL');
+    console.log(imageLink);
+    $("#dropbox").prepend('<img src="' + imageLink + '">');
+    console.log('<img src="' + imageLink + '">');
+}
+
+
+//Clear Image Div
+
+$("#resetDiv").on("click", function() {
+    $("#dropbox").empty();
+});
 
 
     //IMAGE SEARCH
@@ -14,7 +44,6 @@ $(document).ready(function() {
     $(document).on("mousedown", function() {
         $("img").attr("id", "drag1");
         console.log("where is the picture")
-
     });
 
     function allowDrop(ev) {
@@ -32,7 +61,7 @@ $(document).ready(function() {
         var data = ev.dataTransfer.getData("text");
         ev.target.appendChild(document.getElementById(data));
         console.log("Hi");
-    }
+    } 
 
 
     // Initialize Firebase
@@ -49,6 +78,7 @@ $(document).ready(function() {
 
     firebase.initializeApp(config);
 
+
     var db = firebase.database();
     $("#run-search").on("click", function(event) {
         event.preventDefault();
@@ -63,6 +93,9 @@ $(document).ready(function() {
 
         $("#searchTerm").val("");
     });
+
+//FACE++ API
+
 
     db.ref().limitToLast(6).on("child_added", function(childSnapshot, prevChildKey) {
         console.log(childSnapshot.val());

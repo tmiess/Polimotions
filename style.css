@@ -28,10 +28,10 @@ th {
     font-weight: bold;
 }
 
-#div1 {
+#dropbox {
     border: solid 2px;
     max-width: 400px;
-    max-height: 500px;
+    height: 500px;
 }
 
 .box {
