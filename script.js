@@ -108,8 +108,6 @@ $(document).ready(function() {
         $("#searchTerm").val("");
     });
 
-    //FACE++ API
-
 
     db.ref().limitToLast(6).on("child_added", function(childSnapshot, prevChildKey) {
         console.log(childSnapshot.val());
@@ -120,7 +118,6 @@ $(document).ready(function() {
 
         $("#searches").prepend(newDiv);
     });
-
 
     //FACE++ API
     $("#analysisButton").on("click", function() {
@@ -133,16 +130,12 @@ $(document).ready(function() {
         $("#surprise").val("");
         $("#div1").empty();
 
-        var imageURL = "https://cdn.history.com/sites/2/2013/11/George_Washington-AB.jpeg";
-
-        console.log(imageURL);
-
         var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
 
         var params = {
             "api_key": "AKof96jqIYUIqbmI2TaF3-AJcURETpor",
             "api_secret": "WbNCep4Ml1Ad_wTiItDTq7QhTEskPUYT",
-            "image_url": imageURL,
+            "image_url": imageLink,
             "return_attributes": "gender,age,emotion",
         };
 
@@ -165,7 +158,7 @@ $(document).ready(function() {
                 var age = results.faces[0].attributes.age.value;
                 var gender = results.faces[0].attributes.gender.value;
 
-                var image = $("<img>").attr("src", imageURL);
+                var image = $("<img>").attr("src", imageLink);
                 var imagePlace = $("#div1");
 
                 imagePlace.append(image);
@@ -181,4 +174,5 @@ $(document).ready(function() {
 
             });
     });
+
 });

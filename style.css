@@ -64,7 +64,10 @@ img {
     font-size: 16px;
 }
 
-
+.images {
+    max-width: 500px;
+    max-height: 300px;
+}
 
 /*a:hover+.box,*/
 
