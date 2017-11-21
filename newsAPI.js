@@ -59,7 +59,7 @@ $("#run-search").on("click", function(event) {
     var searchTerm = $("#searchTerm").val().trim();
     console.log("search term is: " + searchTerm);
     var searchTerm = searchTerm.replace(/\s+/g, '%20');
-    var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&sources=the-wall-street-journal&apiKey=a3b7c632d41e45bcb47ccc17698fb653"
+    var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&sources=politico&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
     //var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&from=2014-11-15&sortBy=popularity&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
     //var searchURL = "https://newsapi.org/v2/top-headlines?q=" + searchTerm + "&sources=wall-street-journal&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
     console.log("2/8 search url is: " + searchURL);
