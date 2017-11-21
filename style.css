@@ -47,6 +47,7 @@ nav {
 .collapsible {
 
     border-style: none;
+    margin-left: 5px;
 }
 
 .collapsible-header {
@@ -72,7 +73,6 @@ nav {
     background-color: white;
     border-bottom: 4px double #e0e0e0;
     position: relative;
-    right: 7%;
 }
 
 .divneed {
@@ -85,8 +85,6 @@ nav {
 .container {
     width: auto;
     padding-left: 20px;
-    padding-right: 20px;
-    margin: 0px;
 }
 
 #recent,
@@ -98,8 +96,8 @@ th {
 #dropbox {
     border-bottom: 4px double #e0e0e0;
     border-top: 4px double #e0e0e0;
-    max-width: 400px;
-    height: 500px;
+    width: 400px;
+    height: 200px;
 }
 
 .box {
@@ -122,7 +120,6 @@ img {
 }
 
 #analysisButton {
-    margin-top: 10px;
     background-color: #ccc;
     color: black;
 }
@@ -172,7 +169,6 @@ h5 {
 .collapsible {
     position: relative;
     width: 100%;
-    right: 30px;
 }
 
 /*a:hover+.box,*/

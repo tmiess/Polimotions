@@ -32,22 +32,22 @@
     <!-- NavBar -->
 
     <!--<div class="navbar-fixed">-->
-        <!-- Dropdown Structure -->
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="NavBar_Linked_Pages/about.html">About</a></li>
-            <li class="divider"></li>
-            <li><a href="NavBar_Linked_Pages/references.html">References</a></li>
-            <li class="divider"></li>
-            <li><a href="recent_searches.html">Recent Searches</a></li>
-        </ul>
-        <nav>
-            <div class="nav-wrapper">
-                <!-- #42a5f5 blue lighten-1-->
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="NavBar_Linked_Pages/about.html">About</a></li>
+        <li class="divider"></li>
+        <li><a href="NavBar_Linked_Pages/references.html">References</a></li>
+        <li class="divider"></li>
+        <li><a href="recent_searches.html">Recent Searches</a></li>
+    </ul>
+    <nav>
+        <div class="nav-wrapper">
+            <!-- #42a5f5 blue lighten-1-->
 
-                <a href="#" class="brand-logo center"><img id="polimotions" src="politext.png"></a>
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
-                  <li>
-                                      <a id="menu" class="waves-effect waves-light btn btn-floating #212121 grey darken-4"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo center"><img id="polimotions" src="politext.png"></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li>
+                    <a id="menu" class="waves-effect waves-light btn btn-floating #212121 grey darken-4"><i class="material-icons">menu</i></a>
                     <div class="tap-target" data-activates="menu">
                         <div class="tap-target-content">
                             <h5>Welcome!</h5>
@@ -57,12 +57,12 @@
                             <p>Have fun!</p>
                         </div>
                     </div>
-                  </li>
-                    <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
-            </div>
-        </nav>
+                </li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
     </div>
 
 
@@ -80,25 +80,23 @@
     <div class="container">
 
         <div class="row">
-            <div class="col m.25"></div>
             <!-- Search Form with Instructions Div, Submit Button, and Clear Button -->
+            <div class="col m4">
+                <div class="row">
+                    <div class="input-field">
 
-            <div class="col m2">
-
-                <div class="input-field col m12">
-
-                    <input placeholder="Politician's Name Here" id="searchTerm" type="search">
-                    <!-- Submit Button -->
-                    <button class="btn waves-effect waves-light" id="run-search" type="submit" name="action">Search</button>
+                        <input placeholder="Politician's Name Here" id="searchTerm" type="search">
+                        <!-- Submit Button -->
+                        <button class="btn waves-effect waves-light" id="run-search" type="submit" name="action">Search</button>
+                    </div>
                 </div>
-                <div id="recent">Recent Searches: </div>
-                <p id="searches"></p>
+                <div class="row">
+                    <!--IMAGE DIV-->
+                    <div class="images"></div>
+                </div>
+                <!--<div id="recent">Recent Searches: </div>-->
+                <!--<p id="searches"></p>-->
             </div>
-            <!--Image Div and Face++ Analysis Div Below -->
-            <div class="col m.25"></div>
-
-
-
 
             <!--Image Div and Face++ Analysis Div Below -->
             <div class="col m4 divneed">
@@ -107,12 +105,14 @@
                 <span class="card-title"><strong>
                     <div id="dropbox" class="draggable">
                     </div>
-                    <button class="btn waves-effect waves-light" id="resetDiv">CLEAR</button>
+                    <br>
+                    <a id="analysisButton" class="waves-effect waves-light btn">Run Analysis</a>
+                    <br>
+                    <a id="resetDiv" class="waves-effect waves-light btn">Clear</a>
                 </strong></span>
 
                 <div class="row">
                     <div id="analysisDiv" class="col m12">
-                        <a id="analysisButton" class="waves-effect waves-light btn">Run Analysis</a>
 
                         <table id="table" class="striped">
                             <thead>
@@ -139,17 +139,11 @@
                                 </tr>
                             </tbody>
                         </table>
-
-
                     </div>
                 </div>
-
             </div>
-            <div class="col m.25"></div>
             <!-- Article Return Div -->
-
-
-            <div class="col m5" id="well-section">
+            <div class="col m4" id="well-section">
                 <h4><strong><i class="fa fa-table"></i>Top Articles</strong></h4>
                 <div class="divider"></div>
 
@@ -188,11 +182,8 @@
                         <div id="article4" class="collapsible-body"></div>
                     </li>
                 </ul>
-                <div class="col m.25"></div>
 
             </div>
-            <!--Image Div-->
-            <div class="images"></div>
         </div>
     </div>
 

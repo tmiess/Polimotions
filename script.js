@@ -10,12 +10,12 @@ $(document).ready(function() {
 
     //IMAGE DROPBOX
     var dropbox = document.getElementById("dropbox");
-    dropbox.addEventListener("dragenter", noopHandler, false);
-    dropbox.addEventListener("dragexit", noopHandler, false);
-    dropbox.addEventListener("dragover", noopHandler, false);
+    dropbox.addEventListener("dragenter", dropHandler, false);
+    dropbox.addEventListener("dragexit", dropHandler, false);
+    dropbox.addEventListener("dragover", dropHandler, false);
     dropbox.addEventListener("drop", drop, false);
 
-    function noopHandler(evt) {
+    function dropHandler(evt) {
         evt.stopPropagation();
         evt.preventDefault();
         console.log("Handler working")
@@ -26,7 +26,7 @@ $(document).ready(function() {
         evt.preventDefault();
         imageLink = evt.dataTransfer.getData('URL');
         console.log(imageLink);
-        $("#dropbox").prepend('<img src="' + imageLink + '">');
+        $("#dropbox").prepend('<img class="responsive-img" src="' + imageLink + '">');
         console.log('<img src="' + imageLink + '">');
     }
     //DRAG GEORGE
@@ -46,10 +46,11 @@ $(document).ready(function() {
 
     $("#resetDiv").on("click", function() {
         $("#dropbox").empty();
+        $(".images").empty();
+        $("#name").empty();
     });
 
-
-    //IMAGE SEARCH
+    //Touchscreen Friendly Drag and Drop
     // $(document).on("mouseover", function() {
     //     $("img").attr("draggable", "true");
     //     $("img").attr("ondragstart", "drag(event)");
@@ -60,22 +61,6 @@ $(document).ready(function() {
     //     console.log("where is the picture")
     // });
 
-    // function allowDrop(ev) {
-    //     ev.preventDefault();
-    // }
-
-    // function drag(ev) {
-    //     ev.dataTransfer.setData("text", ev.target.id);
-    //     console.log("Hey");
-    // }
-
-
-    // function drop(ev) {
-    //     ev.preventDefault();
-    //     var data = ev.dataTransfer.getData("URL");
-    //     ev.target.appendChild(document.getElementById(data));
-    //     console.log("Hi");
-    // }
 
 
     // Initialize Firebase
