@@ -26,13 +26,13 @@ $(document).ready(function() {
         evt.preventDefault();
         imageLink = evt.dataTransfer.getData('URL');
         console.log(imageLink);
-        $("#dropbox").prepend('<img src="' + imageLink + '">');
+        $("#dropbox").prepend('<img class="dragMe" src="' + imageLink + '">');
         console.log('<img src="' + imageLink + '">');
     }
 
-    $(document).on("mousedown", function() {
-        $("img").draggable("enable");
-        console.log("img");
+    $(document).on("mousemove", function() {
+        $(".dragMe").draggable("enable");
+        console.log(".dragMe");
     });
 
     //Clear Image Div
