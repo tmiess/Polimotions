@@ -19,22 +19,32 @@
     <!-- Icons From Materialize, if Used -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!--  Font Links -->
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet">
+
 </head>
 
 <body>
-    <!-- NavBar -->
-    <nav>
-        <div class="nav-wrapper #42a5f5 blue lighten-1">
 
-            <a href="#" class="brand-logo right">Polimotions</a>
+    <div class="black"></div>
+    <!-- NavBar -->
+
+    <nav>
+        <div class="nav-wrapper">
+
+            <a href="#" class="brand-logo center"><img id="polimotions" src="politext.png"></a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
 
                 <li>
-                    <a id="menu" class="waves-effect waves-light btn btn-floating #42a5f5 blue lighten-1"><i class="material-icons">menu</i></a>
+                    <a id="menu" class="waves-effect waves-light btn btn-floating #212121 grey darken-4"><i class="material-icons">menu</i></a>
                     <div class="tap-target" data-activates="menu">
                         <div class="tap-target-content">
-                            <h5>Title</h5>
-                            <p>A bunch of text</p>
+                            <h5>Welcome!</h5>
+                            <p id="about">Welcome to Polimotions, where facial recognition software and analysis meets the current political events. Begin by using the search bar to find articles that are relevant to your topic. Scroll through the articles to locate
+                                an image of people related to your topic. Drag the image to the box in the center of the screen and hit the "Analyze" button. You will receive information on six categories of expression for up to five individuals in each
+                                image. To analyze more images, just hit clear and drag a new one over. </p>
+                            <p>Have fun!</p>
                         </div>
                     </div>
                 </li>
@@ -45,6 +55,13 @@
             </ul>
         </div>
     </nav>
+
+
+
+    <div class="contain belownavdiv">
+        <span id="toptext" class="center">Tuesday, November 21st, 2017</span>
+
+    </div>
 
     <br>
     <br>
@@ -62,7 +79,8 @@
 
                     Type your search in here:<input id="searchTerm" type="search">
                     <!-- Submit Button -->
-                    <button class="btn waves-effect waves-light" id="run-search" type="submit" name="action">Submit</button>
+                    <button class="btn waves-effect waves-light #212121 grey darken-4" id="run-search" type="submit" name="action">Submit</button>
+
 
                     <br>
                     <br>
@@ -80,7 +98,7 @@
 
 
             <!--Image Div and Face++ Analysis Div Below -->
-            <div class="col m4">
+            <div class="col m4 divneed">
                 <p id="name"></p>
 
                 <span class="card-title"><strong>
@@ -142,37 +160,38 @@
 
             <div class="col m5" id="well-section">
                 <h4><strong><i class="fa fa-table"></i>Top Articles</strong></h4>
+                <div class="divider"></div>
 
 
                 <!--  Experimenting with collapsible tables -->
 
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">add</i>
+                        <div class="collapsible-header"><i class="material-icons">remove</i>
                             <p id="title0"></p>
                         </div>
                         <div id="article0" class="collapsible-body"></div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">add</i>
+                        <div class="collapsible-header"><i class="material-icons">remove</i>
                             <p id="title1"></p>
                         </div>
                         <div id="article1" class="collapsible-body"></div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">add</i>
+                        <div class="collapsible-header"><i class="material-icons">remove</i>
                             <p id="title2"></p>
                         </div>
                         <div id="article2" class="collapsible-body"></div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">add</i>
+                        <div class="collapsible-header"><i class="material-icons">remove</i>
                             <p id="title3"></p>
                         </div>
                         <div id="article3" class="collapsible-body"></div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">add</i>
+                        <div class="collapsible-header lastheader"><i class="material-icons">remove</i>
                             <p id="title4"></p>
                         </div>
                         <div id="article4" class="collapsible-body"></div>
