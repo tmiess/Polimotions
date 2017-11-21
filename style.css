@@ -140,6 +140,12 @@ img {
     line-height: 25px;
 }
 
+
+.images {
+    max-width: 500px;
+    max-height: 300px;
+}
+
 .tap-target-origin {
     top: 15%;
     left: 31%;
@@ -168,7 +174,6 @@ h5 {
     width: 100%;
     right: 30px;
 }
-
 
 /*a:hover+.box,*/
 
