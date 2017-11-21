@@ -32,6 +32,7 @@ $(document).ready(function() {
 
     $(document).on("mousedown", function() {
         $("img").draggable("enable");
+        console.log("img");
     });
 
     //Clear Image Div
