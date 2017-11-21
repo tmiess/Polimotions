@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Bangers|Hammersmith+One|Julius+Sans+One|Patua+One|Philosopher:700|Righteous" rel="stylesheet">
 
+
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
@@ -26,10 +27,11 @@
     <div class="navbar-fixed">
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">one</a></li>
-            <li><a href="#!">two</a></li>
+            <li><a href="NavBar_Linked_Pages/about.html">About</a></li>
             <li class="divider"></li>
-            <li><a href="#!">three</a></li>
+            <li><a href="NavBar_Linked_Pages/references.html">References</a></li>
+            <li class="divider"></li>
+            <li><a href="recent_searches.html">Recent Searches</a></li>
         </ul>
         <nav>
             <div class="nav-wrapper">
@@ -37,10 +39,8 @@
 
                 <a href="#" class="brand-logo right">Polimotions</a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li class="navText"><a href="sass.html">About</a></li>
-                    <li class="navText"><a href="badges.html">Instructions</a></li>
-                    <li class="navText"><a href="collapsible.html">References</a></li>
-                    <li class="navText"><a href="collapsible.html">Recent Searches</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
             </div>
         </nav>
@@ -73,13 +73,13 @@
                 <p id="name"></p>
 
                 <span class="card-title"><strong>
-                    <div id="dropbox">
+                    <div id="dropbox" class="draggable">
                     </div>
                     <button class="btn waves-effect waves-light" id="resetDiv">CLEAR</button>
                 </strong></span>
 
                 <div class="row">
-                    <img id="dragMe" src="https://cdn.history.com/sites/2/2013/11/George_Washington-AB.jpeg">
+                    <img src="https://cdn.history.com/sites/2/2013/11/George_Washington-AB.jpeg">
                     <div id="analysisDiv" class="col m12">
                         <a id="analysisButton" class="waves-effect waves-light btn">Run Analysis</a>
 
@@ -162,7 +162,7 @@
 
 
 
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
     <script type="text/javascript" src="touchscreen.js"></script>
     <script src="script.js"></script>
