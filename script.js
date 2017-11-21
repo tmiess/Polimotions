@@ -1,3 +1,7 @@
+//Global Variables
+
+var imageLink;
+
 $(document).ready(function() {
     var image = $("<img>").attr("src", "https://hyperallergic.com/wp-content/uploads/2016/12/whitehouseoldestphoto-720x527.jpg");
     var imagePlace = $("#div1");
@@ -20,12 +24,15 @@ $(document).ready(function() {
     function drop(evt) {
         evt.stopPropagation();
         evt.preventDefault();
-        var imageLink = evt.dataTransfer.getData('URL');
+        imageLink = evt.dataTransfer.getData('URL');
         console.log(imageLink);
         $("#dropbox").prepend('<img src="' + imageLink + '">');
         console.log('<img src="' + imageLink + '">');
     }
 
+    $(document).on("mousedown", function() {
+        $("img").draggable("enable");
+    });
 
     //Clear Image Div
 
