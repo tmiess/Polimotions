@@ -1,18 +1,85 @@
 body {
-    background-image: url("images/brickwall.png");
+    background: url();
+    background: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Vollkorn SC', serif;
+}
+
+nav {
+    height: 165px;
+}
+
+.black {
+    height: 30px;
+    background-color: black;
+    z-index: 2000;
 }
 
 .nav-wrapper {
-    background-color: black;
+    background: white;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 4px double black;
+
 }
 
-.navText {
-    color: white;
+.belownavdiv {
+    border-bottom: 4px double black;
 }
+
+#toptext {
+    font-size: 15px;
+    font-family: 'Convergence', sans-serif;
+    position: relative;
+    left: 480px;
+}
+
+#polimotions {
+    font-family: 'Vollkorn SC', serif;
+    font-size: 90px;
+    color: black;
+    position: relative;
+    top: 40px;
+}
+
+.collapsible {
+
+    border-style: none;
+}
+
+.collapsible-header {
+    background: url();
+    background-size: cover;
+    border-bottom: 4px double #e0e0e0;
+
+
+}
+
+.lastheader {
+    border-bottom: none;
+}
+
 
 #name {
     text-align: center;
     font-size: 22px;
+    border-right: 4px double #e0e0e0;
+}
+
+.divider {
+    background-color: white;
+    border-bottom: 4px double #e0e0e0;
+    position: relative;
+    right: 7%;
+}
+
+.divneed {
+    border-right: 2px solid #e0e0e0;
+    border-left: 2px solid #e0e0e0;
+    position: relative;
+    bottom: 30px;
 }
 
 .container {
@@ -29,7 +96,8 @@ th {
 }
 
 #dropbox {
-    border: solid 2px;
+    border-bottom: 4px double #e0e0e0;
+    border-top: 4px double #e0e0e0;
     max-width: 400px;
     height: 500px;
 }
@@ -59,14 +127,52 @@ img {
     color: black;
 }
 
-#emotions {
-    font-weight: bold;
-    font-size: 16px;
+
+#menu {
+    bottom: 20px;
+    background-color: black;
 }
+
+
+.tap-target {
+    background: white;
+    color: black;
+    line-height: 25px;
+}
+
 
 .images {
     max-width: 500px;
     max-height: 300px;
+}
+
+.tap-target-origin {
+    top: 15%;
+    left: 31%;
+}
+
+.tap-target-content {
+    position: relative;
+    top: 100px;
+}
+
+h5 {
+    position: relative;
+    bottom: 80px;
+    left: 60px;
+}
+
+#about {
+    position: relative;
+    bottom: 60px;
+    right: 20px;
+    width: 350px;
+}
+
+.collapsible {
+    position: relative;
+    width: 100%;
+    right: 30px;
 }
 
 /*a:hover+.box,*/
