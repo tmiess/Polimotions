@@ -66,8 +66,6 @@
     </div>
 
 
-
-
     <div class="contain belownavdiv">
         <span id="toptext" class="center">Tuesday, November 21st, 2017</span>
 
@@ -80,25 +78,24 @@
     <div class="container">
 
         <div class="row">
-            <div class="col m.25"></div>
             <!-- Search Form with Instructions Div, Submit Button, and Clear Button -->
+            <div class="col m4">
+                <div class="row">
+                    <div class="input-field">
 
-            <div class="col m2">
-
-                <div class="input-field col m12">
-
-                    <input placeholder="Politician's Name Here" id="searchTerm" type="search">
-                    <!-- Submit Button -->
-                    <button class="btn waves-effect waves-light" id="run-search" type="submit" name="action">Search</button>
+                        <input placeholder="Politician's Name Here" id="searchTerm" type="search">
+                        <!-- Submit Button -->
+                        <button class="btn waves-effect waves-light" id="run-search" type="submit" name="action">Search</button>
+                    </div>
                 </div>
-                <div id="recent">Recent Searches: </div>
-                <p id="searches"></p>
+                <div class="row">
+                    <!--IMAGE Table-->
+                    <div class="galleria">
+                    </div>
+                </div>
+                <!--<div id="recent">Recent Searches: </div>-->
+                <!--<p id="searches"></p>-->
             </div>
-            <!--Image Div and Face++ Analysis Div Below -->
-            <div class="col m.25"></div>
-
-
-
 
             <!--Image Div and Face++ Analysis Div Below -->
             <div class="col m4 divneed">
@@ -107,12 +104,14 @@
                 <span class="card-title"><strong>
                     <div id="dropbox" class="draggable">
                     </div>
-                    <button class="btn waves-effect waves-light" id="resetDiv">CLEAR</button>
+                    <br>
+                    <a id="analysisButton" class="waves-effect waves-light btn">Run Analysis</a>
+                    <br>
+                    <a id="resetDiv" class="waves-effect waves-light btn">Clear</a>
                 </strong></span>
 
                 <div class="row">
                     <div id="analysisDiv" class="col m12">
-                        <a id="analysisButton" class="waves-effect waves-light btn">Run Analysis</a>
 
                         <table id="table" class="striped">
                             <thead>
@@ -139,17 +138,11 @@
                                 </tr>
                             </tbody>
                         </table>
-
-
                     </div>
                 </div>
-
             </div>
-            <div class="col m.25"></div>
             <!-- Article Return Div -->
-
-
-            <div class="col m5" id="well-section">
+            <div class="col m4" id="well-section">
                 <h4><strong><i class="fa fa-table"></i>Top Articles</strong></h4>
                 <div class="divider"></div>
 
@@ -188,11 +181,8 @@
                         <div id="article4" class="collapsible-body"></div>
                     </li>
                 </ul>
-                <div class="col m.25"></div>
 
             </div>
-            <!--Image Div-->
-            <div class="images"></div>
         </div>
     </div>
 
@@ -203,9 +193,9 @@
     <script type="text/javascript" src="touchscreen.js"></script>
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/galleria.min.js"></script>
     <script type="text/javascript" src="newsAPI.js"></script>
     <script type="text/javascript" src="bing.js"></script>
-    <script type="text/javascript" src="faceplus.js"></script>
 
 </body>
 
