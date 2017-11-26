@@ -28,48 +28,104 @@
 
 <body>
 
-    <div class="black"></div>
-    <!-- NavBar -->
+    <div class="black">
+        <!-- NavBar -->
 
-    <!--<div class="navbar-fixed">-->
-        <!-- Dropdown Structure -->
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="NavBar_Linked_Pages/about.html">About</a></li>
-            <li class="divider"></li>
-            <li><a href="NavBar_Linked_Pages/references.html">References</a></li>
-            <li class="divider"></li>
-            <li><a href="recent_searches.html">Recent Searches</a></li>
-        </ul>
-        <nav>
-            <div class="nav-wrapper">
-                <!-- #42a5f5 blue lighten-1-->
-
-                <a href="#" class="brand-logo center"><img id="polimotions" src="politext.png"></a>
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
-                  <li>
-                                      <a id="menu" class="waves-effect waves-light btn btn-floating #212121 grey darken-4"><i class="material-icons">menu</i></a>
-                    <div class="tap-target" data-activates="menu">
-                        <div class="tap-target-content">
-                            <h5>Welcome!</h5>
-                            <p id="about">Welcome to Polimotions, where facial recognition software and analysis meets the current political events. Begin by using the search bar to find articles that are relevant to your topic. Scroll through the articles to locate
-                                an image of people related to your topic. Drag the image to the box in the center of the screen and hit the "Analyze" button. You will receive information on six categories of expression for up to five individuals in each
-                                image. To analyze more images, just hit clear and drag a new one over. </p>
-                            <p>Have fun!</p>
-                        </div>
+        <ul id="slide-out" class="side-nav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="images/office.jpg">
                     </div>
-                  </li>
-                    <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <a href="#!user"><img class="circle" id="sideNavLogo" src="images/p.PNG"></a>
+                    <h4><strong><i class="fa fa-table"></i>Menu</strong></h4>
+
+                </div>
+            </li>
+
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header">About<i class="material-icons">arrow_drop_down</i></a>
+                        <div id="aboutNav" class="collapsible-body">
+                            <p>Welcome to Polimotions! Searching for information on your local, state, and national politicians has never been easier, or more exciting! Polimotions harnesses the power of News API, Bing Search and FacePlusPlus Facial Detection
+                                to bring you accurate, up-to-date political information you can trust. Simply type in the name of a politician and watch as the magic unfolds. Polimotions delivers articles, ratings, biographies, and more right to your
+                                fingertips. But wait! That’s not all. Putting a fun twist on a usually mundane task, Polimotions also delivers a photograph and an emotional analysis of your searched politician. Don’t get lost in a mountain of information
+                                during campaign season. Try it free today!</p>
+                        </div>
+                    </li>
+                    <div class="divider"></div>
+                    <li>
+                        <a class="collapsible-header">Instructions<i class="material-icons">arrow_drop_down</i></a>
+                        <div id="instructionsNav" class="collapsible-body">
+                            <p>Begin by using the search bar to find images and articles that are relevant to your topic. Scroll through and select an image you would like to analyze, and simply drag that image over to the container. Click 'RUN ANALYSIS'
+                                and watch the magic begin! This button will analyze the selected image and tell you the name, age, and emotions of the person in that image. To analyze more images, just click 'CLEAR' and drag a new one over. Have fun!</p>
+                        </div>
+                    </li>
+                    <div class="divider"></div>
+                    <li>
+                        <a class="collapsible-header">Recent Searches<i class="material-icons">arrow_drop_down</i></a>
+                        <div id="recentNav" class="collapsible-body">
+                            <div id="recent">Recent Searches: </div>
+                            <p id="searches"></p>
+                        </div>
+                    </li>
+                    <div class="divider"></div>
+                    <li>
+                        <a class="collapsible-header">Additional Resources<i class="material-icons">arrow_drop_down</i></a>
+                        <div id="resourcesNav" class="collapsible-body">
+                            <ul>
+                                <li><a href="https://www.allsides.com/unbiased-balanced-news" target="_blank">All Sides</a></li>
+                                <li><a href="https://www.apnews.com/" target="_blank">Associated Press News</a></li>
+                                <li><a href="http://www.bbc.com/news/world/us_and_canada" target="_blank">BBC</a></li>
+                                <li><a href="http://www.brief.news/" target="_blank">Brief.</a></li>
+                                <li><a href="https://www.thebureauinvestigates.com/" target="_blank">The Bureau of Investigative Journalism</a></li>
+                                <li><a href="https://www.economist.com/" target="_blank">The Economist</a></li>
+                                <li><a href="https://www.npr.org/sections/news/" target="_blank">NPR</a></li>
+                                <li><a href="https://www.propublica.org/" target="_blank">ProPublica</a></li>
+                                <li><a href="https://www.reuters.com/" target="_blank">Reuters</a></li>
+                                <li><a href="https://www.usatoday.com/" target="_blank">USA Today</a></li>
+                                <li><a href="https://www.wsj.com/" target="_blank">The Wall Street Journal</a></li>
+                                <li><a href="https://www.wsj.com/" target="_blank">New York Times</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
                 </ul>
-            </div>
-        </nav>
+            </li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse btn-large black"><i class="material-icons fixed">menu</i></a>
     </div>
+
+    <nav>
+        <div class="nav-wrapper">
+
+
+            <a href="#" class="brand-logo center"><img id="polimotions" src="images/politext.png"></a>
+            <!--    <ul id="nav-mobile" class="left hide-on-med-and-down">-->
+            <!--    <li>-->
+            <!--<a id="menu" class="waves-effect waves-light btn btn-floating #212121 grey darken-4"><i class="material-icons">menu</i></a>-->
+            <!--<div class="tap-target" data-activates="menu">-->
+            <!--    <div class="tap-target-content">-->
+            <!--                            <h5>Welcome!</h5>-->
+            <!--                            <p id="about">Welcome to Polimotions, where facial recognition software and analysis meets the current political events. Begin by using the search bar to find articles that are relevant to your topic. Scroll through the articles to locate-->
+            <!--                                an image of people related to your topic. Drag the image to the box in the center of the screen and hit the "Analyze" button. You will receive information on six categories of expression for up to five individuals in each-->
+            <!--                                image. To analyze more images, just hit clear and drag a new one over. </p>-->
+            <!--                            <p>Have fun!</p>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                </li>-->
+            <!--     Dropdown Trigger -->
+            <!--                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>-->
+            <!--            </ul>-->
+        </div>
+    </nav>
 
 
 
 
     <div class="contain belownavdiv">
-        <span id="toptext" class="center">Tuesday, November 21st, 2017</span>
+        <p id="toptext" class="center">Tuesday, November 21st, 2017</p>
 
     </div>
 
@@ -78,22 +134,25 @@
 
     <!-- Content: Search Form and Div, Image Div with Analysis Div Below, News Results Div-->
     <div class="container">
-
         <div class="row">
-            <div class="col m.25"></div>
-            <!-- Search Form with Instructions Div, Submit Button, and Clear Button -->
-
-            <div class="col m2">
-
+            <div class="col m12">
                 <div class="input-field col m12">
 
                     <input placeholder="Politician's Name Here" id="searchTerm" type="search">
                     <!-- Submit Button -->
                     <button class="btn waves-effect waves-light" id="run-search" type="submit" name="action">Search</button>
                 </div>
-                <div id="recent">Recent Searches: </div>
-                <p id="searches"></p>
+
             </div>
+        </div>
+
+
+        <div class="row">
+
+            <!-- Search Form with Instructions Div, Submit Button, and Clear Button -->
+
+
+
             <!--Image Div and Face++ Analysis Div Below -->
             <div class="col m.25"></div>
 
@@ -101,24 +160,28 @@
 
 
             <!--Image Div and Face++ Analysis Div Below -->
-            <div class="col m4 divneed">
+            <div class="col m5 divneed">
                 <p id="name"></p>
 
                 <span class="card-title"><strong>
-                    <div id="dropbox" class="draggable">
-                    </div>
+                    <div id="dropbox" class="draggable"></div>
                     <button class="btn waves-effect waves-light" id="resetDiv">CLEAR</button>
+                    <button class="btn waves-effect waves-light" id="analysisButton" >Run Analysis</button>
                 </strong></span>
 
+
+
+
                 <div class="row">
-                    <img src="https://cdn.history.com/sites/2/2013/11/George_Washington-AB.jpeg">
+                    <img src="">
                     <div id="analysisDiv" class="col m12">
-                        <a id="analysisButton" class="waves-effect waves-light btn">Run Analysis</a>
+
 
                         <table id="table" class="striped">
                             <thead>
                                 <tr>
-                                    <th>Analysis Results: </th>
+                                    <h4><strong><i class="fa fa-table"></i>Analysis Results</strong></h4>
+                                    <div class="divider"></div>
                                 </tr>
                             </thead>
 
@@ -126,11 +189,12 @@
                                 <tr>
                                     <td>Age: <span id="age"></span></td>
                                     <td>Gender: <span id="gender"></span></td>
-                                    <td></td>
+                                    <td>Happiness: <span id="happiness"></span></td>
                                 </tr>
                                 <tr>
                                     <td>Sadness: <span id="sad"></span></td>
                                     <td>Neutral: <span id="neutral"></span></td>
+                                    <td>Fear: <span id="fear"></span></td>
                                 </tr>
 
                                 <tr>
@@ -149,46 +213,56 @@
             <div class="col m.25"></div>
             <!-- Article Return Div -->
 
+            <div class="col m6">
+                <h4><strong><i class="fa fa-table"></i>Image Search Results</strong></h4>
+                <div class="divider"></div>
+                <div class="carousel">
+                    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
+                    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
+                    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>
+                    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>
+                    <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
+                </div>
 
-            <div class="col m5" id="well-section">
                 <h4><strong><i class="fa fa-table"></i>Top Articles</strong></h4>
                 <div class="divider"></div>
 
 
                 <!--  Experimenting with collapsible tables -->
-
-                <ul class="collapsible" data-collapsible="accordion">
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">remove</i>
-                            <p id="title0"></p>
-                        </div>
-                        <div id="article0" class="collapsible-body"></div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">remove</i>
-                            <p id="title1"></p>
-                        </div>
-                        <div id="article1" class="collapsible-body"></div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">remove</i>
-                            <p id="title2"></p>
-                        </div>
-                        <div id="article2" class="collapsible-body"></div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">remove</i>
-                            <p id="title3"></p>
-                        </div>
-                        <div id="article3" class="collapsible-body"></div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header lastheader"><i class="material-icons">remove</i>
-                            <p id="title4"></p>
-                        </div>
-                        <div id="article4" class="collapsible-body"></div>
-                    </li>
-                </ul>
+                <div id="well-section">
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">remove</i>
+                                <p id="title0"></p>
+                            </div>
+                            <div id="article0" class="collapsible-body"></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">remove</i>
+                                <p id="title1"></p>
+                            </div>
+                            <div id="article1" class="collapsible-body"></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">remove</i>
+                                <p id="title2"></p>
+                            </div>
+                            <div id="article2" class="collapsible-body"></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">remove</i>
+                                <p id="title3"></p>
+                            </div>
+                            <div id="article3" class="collapsible-body"></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header lastheader"><i class="material-icons">remove</i>
+                                <p id="title4"></p>
+                            </div>
+                            <div id="article4" class="collapsible-body"></div>
+                        </li>
+                    </ul>
+                </div>
                 <div class="col m.25"></div>
 
             </div>
@@ -203,7 +277,7 @@
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="newsAPI.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
 </body>
 
 </html>
