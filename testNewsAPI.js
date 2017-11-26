@@ -5,6 +5,7 @@
 
 //get title from the image they chose and put that into the URL
 
+
 function AJAXquery(queryURL) {
     console.log("3/8 new queryURL is: " + queryURL);
     $.ajax({
@@ -31,11 +32,11 @@ function AJAXquery(queryURL) {
 
             else {
                 //create new div for the new article
-                var titleDiv = $("<div class='collapsible-header'> </div>");
-                var articleDiv = $("<div class='collapsible-body'> </div>");
+                var titleDiv = $("<div class='collapsible-header'> <i class='material-icons'>filter_drama</i>newTitle</div>");
+                var articleDiv = $("<div class='collapsible-body'><span>newURL</span></div>");
 
                 titleDiv.attr('id', 'title' + i);
-                titleDiv.attr('text', newTitle);
+                titleDiv.text(newTitle);
 
                 articleDiv.attr('id', 'article' + i);
                 //articleDiv.attr('href', newURL);
@@ -60,9 +61,8 @@ function AJAXquery(queryURL) {
                 $("#article-section").append(articleDiv);
 
                 //initailize collapsibles
-                $('.collapsible').collapsible();
-                $('.collapsible-header').collapsible();
-                $('.collapsible-body').collapsible();
+                //$('.collapsible-header').collapsible();
+                //$('.collapsible-body').collapsible();
 
                 console.log("6/8 article is: " + result.articles[i]);
 
@@ -75,18 +75,33 @@ function AJAXquery(queryURL) {
 }
 
 $("#run-search").on("click", function(event) {
+
     console.log("1/8 button works");
     event.preventDefault();
 
-    //$(".collapsible").empty();
+    $("#article-section").empty();
 
     var searchTerm = $("#searchTerm").val().trim();
-    console.log("search term is: " + searchTerm);
-    var searchTerm = searchTerm.replace(/\s+/g, '%20');
-    var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&sources=politico&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
-    //var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&from=2014-11-15&sortBy=popularity&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
-    //var searchURL = "https://newsapi.org/v2/top-headlines?q=" + searchTerm + "&sources=wall-street-journal&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
-    console.log("2/8 search url is: " + searchURL);
+    console.log(searchTerm.length);
 
-    AJAXquery(searchURL);
+    if (searchTerm.length == 0 || searchTerm.includes("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")) {
+        $("#run-search").text("Invalid Search");
+        setInterval(function() { $("#run-search").text("Sumbit"); }, 3000)
+    }
+    else {
+        console.log("search term is: " + searchTerm);
+        var searchTerm = searchTerm.replace(/\s+/g, '%20');
+        var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&sources=politico&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
+        //var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&from=2014-11-15&sortBy=popularity&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
+        //var searchURL = "https://newsapi.org/v2/top-headlines?q=" + searchTerm + "&sources=wall-street-journal&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
+        console.log("2/8 search url is: " + searchURL);
+
+        AJAXquery(searchURL);
+    }
+
+});
+
+$(document).ready(function() {
+    $('.collapsible-header').collapsible();
+    $('.collapsible-body').collapsible();
 });
