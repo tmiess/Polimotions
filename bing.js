@@ -5,6 +5,8 @@
  var imageResultsDisplay;
  $("#run-search").on("click", function() {
 
+  $(".galleria").empty();
+
   event.preventDefault();
 
   var imageSearch = $("#searchTerm").val().trim();
@@ -12,7 +14,7 @@
 
   var queryURL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=" + imageSearch + "&count=10";
 
-  $.ajax({
+  $.ajax({ //start ajax
     url: queryURL,
     beforeSend: function(xhrObj) {
      // Request headers
@@ -25,19 +27,23 @@
     console.log(response);
 
     var results = response.value;
-    console.log(results);
+    console.log("results length" + results.length);
 
-    for (var i = 0; i < results.length; i++) {
+    for (var i = results.length - 1; i >= (results.length - 9); i--) {
      imageResultsDisplay = $('<img src="' + results[i].contentUrl + '"/>');
      imageArray.push(imageResultsDisplay);
+
     }
-    $(".galleria").append(imageArray);
 
     function galleria() {
      Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/themes/classic/galleria.classic.min.js');
      Galleria.run('.galleria');
-    };
+     $(".galleria").append(imageArray);
+    }
+
     galleria();
-   });
+
+   }); //end ajax
+
  });
  

@@ -126,6 +126,8 @@ $(document).ready(function() {
                 var results = response;
                 console.log(results);
 
+                var analysis = $(".analysisDiv");
+
                 // variables to catch emotions
                 var sadness = results.faces[0].attributes.emotion.sadness;
                 var neutral = results.faces[0].attributes.emotion.neutral;
