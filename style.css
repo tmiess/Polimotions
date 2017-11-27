@@ -29,7 +29,6 @@ p {
 }
 
 .black {
-    height: 30px;
     background-color: black;
     z-index: 2000;
 }
@@ -191,3 +190,25 @@ th {
 /*    z-index: 100;*/
 
 /*}*/
+
+#slide-out {
+    font-family: 'Vollkorn SC', serif;
+}
+
+#aboutNav,
+#instructionsNav,
+#recentNav {
+    padding: 20px;
+    line-height: 140%
+}
+
+#recentNav,
+#resourcesNav {
+    text-align: center;
+}
+
+#resourcesNav {
+    line-height: 100%;
+    padding: 0px;
+
+}
