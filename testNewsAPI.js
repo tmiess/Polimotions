@@ -24,51 +24,79 @@ function AJAXquery(queryURL) {
 
             var newURL = result.articles[i].url;
             var newTitle = result.articles[i].title;
+            var newLink = $("<a>");
+            newLink.attr("href", newURL);
+            newLink.text("Click here to read article on Politico.");
+            newLink.attr("target", "_blank");
+
+            console.log("6/8 article is: " + result.articles[i]);
+            console.log("7/8 title is: " + newTitle);
+            console.log("8/8 url is: " + newURL);
 
             if (newURL.includes("http:")) {
+                console.log("////DO NOT DISPLAY ARTICLE////");
+
                 j++;
                 console.log("http denied: " + j);
+
+                $("#title" + i).text(newTitle);
+                $("#article" + i).append(newLink);
             }
 
             else {
-                //create new div for the new article
-                var titleDiv = $("<div class='collapsible-header'> <i class='material-icons'>filter_drama</i>newTitle</div>");
-                var articleDiv = $("<div class='collapsible-body'><span>newURL</span></div>");
+                console.log("////DISPLAY ARTICLE////");
 
-                titleDiv.attr('id', 'title' + i);
-                titleDiv.text(newTitle);
-
-                articleDiv.attr('id', 'article' + i);
-                //articleDiv.attr('href', newURL);
-                $("#article" + i).empty();
-
-                console.log(titleDiv);
-                console.log(articleDiv);
-
-
-                //create iframe to display article, add attributes
                 var articleSection = $("<iframe>");
+
                 articleSection.addClass("box");
-                articleSection.attr("id", "frame" + i);
                 articleSection.attr("src", newURL);
                 articleSection.attr("frameborder", 0);
                 articleSection.attr("scrolling", "yes");
 
-                //$("#article" + i).html(articleSection);
-                //$("#title" + i).text(newTitle);
-                $("#article" + i).append(articleSection);
-                $("#article-section").append(titleDiv);
-                $("#article-section").append(articleDiv);
+                $("#title" + i).text(newTitle);
+                $("#article" + i).empty().append(articleSection);
 
-                //initailize collapsibles
-                //$('.collapsible-header').collapsible();
-                //$('.collapsible-body').collapsible();
+                ////////////////////////////////////////////////////
+                //tried to add them dynamically. here is the attempt:
 
-                console.log("6/8 article is: " + result.articles[i]);
+                //create new div for the new article
+                // var titleDiv = $("<div class='collapsible-header'> <i class='material-icons'>filter_drama</i>newTitle</div>");
+                // var articleDiv = $("<div class='collapsible-body'><span>newURL</span></div>");
 
-                console.log("7/8 title is: " + newTitle);
+                // titleDiv.attr('id', 'title' + i);
+                // titleDiv.text(newTitle);
 
-                console.log("8/8 url is: " + newURL);
+                // articleDiv.attr('id', 'article' + i);
+                // //articleDiv.attr('href', newURL);
+                // $("#article" + i).empty();
+
+                // console.log(titleDiv);
+                // console.log(articleDiv);
+
+
+                // //create iframe to display article, add attributes
+                // var articleSection = $("<iframe>");
+                // articleSection.addClass("box");
+                // articleSection.attr("id", "frame" + i);
+                // articleSection.attr("src", newURL);
+                // articleSection.attr("frameborder", 0);
+                // articleSection.attr("scrolling", "yes");
+
+                // //$("#article" + i).html(articleSection);
+                // //$("#title" + i).text(newTitle);
+                // $("#article" + i).append(articleSection);
+                // $("#article-section").append(titleDiv);
+                // $("#article-section").append(articleDiv);
+
+                // //initailize collapsibles
+                // //$('.collapsible-header').collapsible();
+                // //$('.collapsible-body').collapsible();
+
+                // console.log("6/8 article is: " + result.articles[i]);
+
+                // console.log("7/8 title is: " + newTitle);
+
+                // console.log("8/8 url is: " + newURL);
             }
         }
     });
