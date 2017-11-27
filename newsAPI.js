@@ -12,27 +12,48 @@ function AJAXquery(queryURL) {
         method: 'GET',
     }).done(function(result) {
         console.log(result);
+        
+        var j = 0; //counts number of http denied
 
         // Loop through and provide the correct number of articles
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < result.articles.length; i++) {
 
+            console.log("result.articles.length: " + result.articles.length);
 
-            var articleSection = $("<iframe>");
-
-            articleSection.addClass("box");
-            articleSection.attr("src", result.articles[i].url);
-            articleSection.attr("frameborder", 0);
-            articleSection.attr("scrolling", "yes");
-
-            $("#title" + i).text(result.articles[i].title);
-            $("#article" + i).empty().append(articleSection)
+            var newURL = result.articles[i].url;
+            var newTitle = result.articles[i].title;
+            var newLink = $("<a>");
+            newLink.attr("href", newURL);
+            newLink.text("Click here to read article on Politico.");
+            newLink.attr("target", "_blank");
 
             console.log("6/8 article is: " + result.articles[i]);
+            console.log("7/8 title is: " + newTitle);
+            console.log("8/8 url is: " + newURL);
 
-            console.log("7/8 title is: " + result.articles[i].title);
+            if (newURL.includes("http:")) {
+                console.log("////DO NOT DISPLAY ARTICLE////");
 
-            console.log("8/8 url is: " + result.articles[i].url);
+                j++;
+                console.log("http denied: " + j);
 
+                $("#title" + i).text(newTitle);
+                $("#article" + i).append(newLink);
+            }
+
+            else {
+                console.log("////DISPLAY ARTICLE////");
+
+                var articleSection = $("<iframe>");
+
+                articleSection.addClass("box");
+                articleSection.attr("src", newURL);
+                articleSection.attr("frameborder", 0);
+                articleSection.attr("scrolling", "yes");
+
+                $("#title" + i).text(newTitle);
+                $("#article" + i).empty().append(articleSection);
+            }
         }
     });
 }
