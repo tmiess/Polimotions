@@ -19,10 +19,10 @@ $(document).ready(function() {
 
 
 
-    // var image = $("<img>").attr("src", "https://hyperallergic.com/wp-content/uploads/2016/12/whitehouseoldestphoto-720x527.jpg");
-    // var imagePlace = $("#div1");
+    var image = $("<img>").attr("src", "https://hyperallergic.com/wp-content/uploads/2016/12/whitehouseoldestphoto-720x527.jpg");
+    var imagePlace = $("#div1");
 
-    // imagePlace.append(image);
+    imagePlace.append(image);
 
     //IMAGE DROPBOX
     var dropbox = document.getElementById("dropbox");
@@ -56,6 +56,12 @@ $(document).ready(function() {
         $("#dropbox").empty();
         $(".images").empty();
         $("#name").empty();
+        $("#age").val("");
+        $("#sad").val("");
+        $("#neutral").val("");
+        $("#disgust").val("");
+        $("#anger").val("");
+        $("#surprise").val("");
     });
 
     //Touchscreen Friendly Drag and Drop
@@ -115,13 +121,6 @@ $(document).ready(function() {
     });
     //FACE++ API
     $("#analysisButton").on("click", function() {
-        $("#analysisDiv").val("");
-        $("#age").val("");
-        $("#sad").val("");
-        $("#neutral").val("");
-        $("#disgust").val("");
-        $("#anger").val("");
-        $("#surprise").val("");
         $("#div1").empty();
 
         var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
