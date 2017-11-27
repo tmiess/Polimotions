@@ -31,18 +31,77 @@
 
 <body>
 
-    <div class="black"></div>
-    <!-- NavBar -->
 
-    <!--<div class="navbar-fixed">-->
-    <!-- Dropdown Structure -->
-    <ul id="dropdown1" class="dropdown-content">
-        <li><a href="NavBar_Linked_Pages/about.html">About</a></li>
-        <li class="divider"></li>
-        <li><a href="NavBar_Linked_Pages/references.html">References</a></li>
-        <li class="divider"></li>
-        <li><a href="recent_searches.html">Recent Searches</a></li>
-    </ul>
+    <div class="black">
+        <!-- NavBar -->
+
+        <ul id="slide-out" class="side-nav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="images/office.jpg">
+                    </div>
+                    <a href="#!user"><img class="circle" id="sideNavLogo" src="images/p.PNG"></a>
+                    <h4><strong><i class="fa fa-table"></i>Menu</strong></h4>
+
+                </div>
+            </li>
+
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header">About<i class="material-icons">arrow_drop_down</i></a>
+                        <div id="aboutNav" class="collapsible-body">
+                            <p>Welcome to Polimotions! Searching for information on your local, state, and national politicians has never been easier, or more exciting! Polimotions harnesses the power of News API, Bing Search and FacePlusPlus Facial Detection
+                                to bring you accurate, up-to-date political information you can trust. Simply type in the name of a politician and watch as the magic unfolds. Polimotions delivers articles, ratings, biographies, and more right to your
+                                fingertips. But wait! That’s not all. Putting a fun twist on a usually mundane task, Polimotions also delivers a photograph and an emotional analysis of your searched politician. Don’t get lost in a mountain of information
+                                during campaign season. Try it free today!</p>
+                        </div>
+                    </li>
+                    <div class="divider"></div>
+                    <li>
+                        <a class="collapsible-header">Instructions<i class="material-icons">arrow_drop_down</i></a>
+                        <div id="instructionsNav" class="collapsible-body">
+                            <p>Begin by using the search bar to find images and articles that are relevant to your topic. Scroll through and select an image you would like to analyze, and simply drag that image over to the container. Click 'RUN ANALYSIS'
+                                and watch the magic begin! This button will analyze the selected image and tell you the name, age, and emotions of the person in that image. To analyze more images, just click 'CLEAR' and drag a new one over. Have fun!</p>
+                        </div>
+                    </li>
+                    <div class="divider"></div>
+                    <li>
+                        <a class="collapsible-header">Recent Searches<i class="material-icons">arrow_drop_down</i></a>
+                        <div id="recentNav" class="collapsible-body">
+                            <div id="recent">Recent Searches: </div>
+                            <p id="searches"></p>
+                        </div>
+                    </li>
+                    <div class="divider"></div>
+                    <li>
+                        <a class="collapsible-header">Additional Resources<i class="material-icons">arrow_drop_down</i></a>
+                        <div id="resourcesNav" class="collapsible-body">
+                            <ul>
+                                <li><a href="https://www.allsides.com/unbiased-balanced-news" target="_blank">All Sides</a></li>
+                                <li><a href="https://www.apnews.com/" target="_blank">Associated Press News</a></li>
+                                <li><a href="http://www.bbc.com/news/world/us_and_canada" target="_blank">BBC</a></li>
+                                <li><a href="http://www.brief.news/" target="_blank">Brief.</a></li>
+                                <li><a href="https://www.thebureauinvestigates.com/" target="_blank">The Bureau of Investigative Journalism</a></li>
+                                <li><a href="https://www.economist.com/" target="_blank">The Economist</a></li>
+                                <li><a href="https://www.npr.org/sections/news/" target="_blank">NPR</a></li>
+                                <li><a href="https://www.propublica.org/" target="_blank">ProPublica</a></li>
+                                <li><a href="https://www.reuters.com/" target="_blank">Reuters</a></li>
+                                <li><a href="https://www.usatoday.com/" target="_blank">USA Today</a></li>
+                                <li><a href="https://www.wsj.com/" target="_blank">The Wall Street Journal</a></li>
+                                <li><a href="https://www.wsj.com/" target="_blank">New York Times</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse btn-large black"><i class="material-icons fixed">menu</i></a>
+
+    </div>
+
     <nav>
         <div class="nav-wrapper">
             <!-- #42a5f5 blue lighten-1-->
@@ -65,7 +124,7 @@
             </ul>
         </div>
     </nav>
-    </div>
+
 
 
     <div class="belownavdiv">
@@ -77,8 +136,8 @@
 
     <!-- Content: Search Form and Div, Image Div with Analysis Div Below, News Results Div-->
     <div class="container">
-
         <div class="row">
+
             <!-- Search Form with Instructions Div, Submit Button, and Clear Button -->
             <div class="col m4">
                 <div class="row">
@@ -96,28 +155,35 @@
                 </div>
                 <!--<div id="recent">Recent Searches: </div>-->
                 <!--<p id="searches"></p>-->
-            </div>
+          </div>
 
             <!--Image Div and Face++ Analysis Div Below -->
-            <div class="col m4 divneed">
+            <div class="col m5 divneed">
                 <p id="name"></p>
 
                 <span class="card-title"><strong>
+
                     <div id="dropbox" class="draggable">
                     </div>
                     <br>
                     <a id="analysisButton" class="waves-effect waves-light btn">Run Analysis</a>
                     <br>
                     <a id="resetDiv" class="waves-effect waves-light btn">Clear</a>
+
                 </strong></span>
 
+
+
+
                 <div class="row">
+
                     <div id="analysisDiv" class="col m12">
 
                         <table id="table" class="striped">
                             <thead>
                                 <tr>
-                                    <th>Analysis Results: </th>
+                                    <h4><strong><i class="fa fa-table"></i>Analysis Results</strong></h4>
+                                    <div class="divider"></div>
                                 </tr>
                             </thead>
 
@@ -125,11 +191,12 @@
                                 <tr>
                                     <td>Age: <span id="age"></span></td>
                                     <td>Gender: <span id="gender"></span></td>
-                                    <td></td>
+                                    <td>Happiness: <span id="happiness"></span></td>
                                 </tr>
                                 <tr>
                                     <td>Sadness: <span id="sad"></span></td>
                                     <td>Neutral: <span id="neutral"></span></td>
+                                    <td>Fear: <span id="fear"></span></td>
                                 </tr>
 
                                 <tr>
@@ -143,6 +210,7 @@
                 </div>
             </div>
             <!-- Article Return Div -->
+
             <div class="col m4" id="well-section">
                 <h4><strong><i class="fa fa-table"></i>Top Articles</strong></h4>
                 <div class="divider"></div>
@@ -196,6 +264,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/galleria.min.js"></script>
     <script type="text/javascript" src="newsAPI.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
     <script type="text/javascript" src="bing.js"></script>
 
 </body>
