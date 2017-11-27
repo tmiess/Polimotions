@@ -28,6 +28,7 @@
 
 <body>
 
+
     <div class="black">
         <!-- NavBar -->
 
@@ -95,6 +96,7 @@
             </li>
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse btn-large black"><i class="material-icons fixed">menu</i></a>
+
     </div>
 
     <nav>
@@ -122,8 +124,6 @@
     </nav>
 
 
-
-
     <div class="contain belownavdiv">
         <p id="toptext" class="center">Tuesday, November 21st, 2017</p>
 
@@ -135,47 +135,47 @@
     <!-- Content: Search Form and Div, Image Div with Analysis Div Below, News Results Div-->
     <div class="container">
         <div class="row">
-            <div class="col m12">
-                <div class="input-field col m12">
-
-                    <input placeholder="Politician's Name Here" id="searchTerm" type="search">
-                    <!-- Submit Button -->
-                    <button class="btn waves-effect waves-light" id="run-search" type="submit" name="action">Search</button>
-                </div>
-
-            </div>
-        </div>
-
-
-        <div class="row">
 
             <!-- Search Form with Instructions Div, Submit Button, and Clear Button -->
+            <div class="col m4">
+                <div class="row">
+                    <div class="input-field">
 
-
-
-            <!--Image Div and Face++ Analysis Div Below -->
-            <div class="col m.25"></div>
-
-
-
+                        <input placeholder="Politician's Name Here" id="searchTerm" type="search">
+                        <!-- Submit Button -->
+                        <button class="btn waves-effect waves-light" id="run-search" type="submit" name="action">Search</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--IMAGE Table-->
+                    <div class="galleria">
+                    </div>
+                </div>
+                <!--<div id="recent">Recent Searches: </div>-->
+                <!--<p id="searches"></p>-->
+          </div>
 
             <!--Image Div and Face++ Analysis Div Below -->
             <div class="col m5 divneed">
                 <p id="name"></p>
 
                 <span class="card-title"><strong>
-                    <div id="dropbox" class="draggable"></div>
-                    <button class="btn waves-effect waves-light" id="resetDiv">CLEAR</button>
-                    <button class="btn waves-effect waves-light" id="analysisButton" >Run Analysis</button>
+
+                    <div id="dropbox" class="draggable">
+                    </div>
+                    <br>
+                    <a id="analysisButton" class="waves-effect waves-light btn">Run Analysis</a>
+                    <br>
+                    <a id="resetDiv" class="waves-effect waves-light btn">Clear</a>
+
                 </strong></span>
 
 
 
 
                 <div class="row">
-                    <img src="">
-                    <div id="analysisDiv" class="col m12">
 
+                    <div id="analysisDiv" class="col m12">
 
                         <table id="table" class="striped">
                             <thead>
@@ -204,66 +204,50 @@
                                 </tr>
                             </tbody>
                         </table>
-
-
                     </div>
                 </div>
-
             </div>
-            <div class="col m.25"></div>
             <!-- Article Return Div -->
 
-            <div class="col m6">
-                <h4><strong><i class="fa fa-table"></i>Image Search Results</strong></h4>
-                <div class="divider"></div>
-                <div class="carousel">
-                    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
-                    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
-                    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>
-                    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>
-                    <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
-                </div>
-
+            <div class="col m4" id="well-section">
                 <h4><strong><i class="fa fa-table"></i>Top Articles</strong></h4>
                 <div class="divider"></div>
 
 
                 <!--  Experimenting with collapsible tables -->
-                <div id="well-section">
-                    <ul class="collapsible" data-collapsible="accordion">
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">remove</i>
-                                <p id="title0"></p>
-                            </div>
-                            <div id="article0" class="collapsible-body"></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">remove</i>
-                                <p id="title1"></p>
-                            </div>
-                            <div id="article1" class="collapsible-body"></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">remove</i>
-                                <p id="title2"></p>
-                            </div>
-                            <div id="article2" class="collapsible-body"></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">remove</i>
-                                <p id="title3"></p>
-                            </div>
-                            <div id="article3" class="collapsible-body"></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header lastheader"><i class="material-icons">remove</i>
-                                <p id="title4"></p>
-                            </div>
-                            <div id="article4" class="collapsible-body"></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col m.25"></div>
+
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">remove</i>
+                            <p id="title0"></p>
+                        </div>
+                        <div id="article0" class="collapsible-body"></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">remove</i>
+                            <p id="title1"></p>
+                        </div>
+                        <div id="article1" class="collapsible-body"></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">remove</i>
+                            <p id="title2"></p>
+                        </div>
+                        <div id="article2" class="collapsible-body"></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">remove</i>
+                            <p id="title3"></p>
+                        </div>
+                        <div id="article3" class="collapsible-body"></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header lastheader"><i class="material-icons">remove</i>
+                            <p id="title4"></p>
+                        </div>
+                        <div id="article4" class="collapsible-body"></div>
+                    </li>
+                </ul>
 
             </div>
         </div>
@@ -276,8 +260,11 @@
     <script type="text/javascript" src="touchscreen.js"></script>
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/galleria.min.js"></script>
     <script type="text/javascript" src="newsAPI.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+    <script type="text/javascript" src="bing.js"></script>
+
 </body>
 
 </html>

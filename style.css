@@ -10,6 +10,11 @@ body {
     /*padding-right: 20px;*/
     margin: auto;
 
+
+nav {
+    height: 165px;
+    color: black;
+
 }
 
 /*Top of Page Container holding #polimotions img*/
@@ -21,8 +26,10 @@ body {
 
 }
 
-nav {
-    height: 165px;
+
+.galleria {
+    height: 400px;
+    width: 100%;
 }
 
 
@@ -56,11 +63,27 @@ nav {
     text-align: center;
 }
 
+
 /*SideNav*/
 
 #recent {
     font-size: 18px;
     font-weight: bold;
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: black;
+}
+
+.dropdown-button {
+    color: black;
+}
+
+.collapsible {
+
+    border-style: none;
+    margin-left: 5px;
+
 }
 
 #slide-out {
@@ -94,7 +117,15 @@ nav {
     */
 }
 
+
 /*Image and Analysis Results Container*/
+
+.divider {
+    background-color: white;
+    border-bottom: 4px double #e0e0e0;
+    position: relative;
+}
+
 
 .divneed {
     border-right: 2px solid #e0e0e0;
@@ -103,12 +134,18 @@ nav {
     /*bottom: 30px;*/
 }
 
+
 #dropbox {
     border-bottom: 4px double #e0e0e0;
     border-top: 4px double #e0e0e0;
     max-width: 450px;
     height: 400px;
     margin: auto;
+
+.container {
+    width: auto;
+    padding-left: 20px;
+
 }
 
 
@@ -126,6 +163,11 @@ nav {
     /*background: url();*/
     background-size: cover;
     border-bottom: 4px double #e0e0e0;
+
+    border-top: 4px double #e0e0e0;
+    width: 400px;
+    height: 200px;
+
 }
 
 .collapsible {
@@ -157,9 +199,11 @@ nav {
 }
 
 #analysisButton {
+
     margin-top: 10px;
     /*    background-color: #ccc;*/
     /*    color: black;*/
+
 }
 
 
@@ -202,6 +246,12 @@ img {
 
 }
 
+
+.images {
+    max-width: 500px;
+    max-height: 300px;
+}
+
 .tap-target-origin {
 
     top: 15%;
@@ -217,6 +267,7 @@ img {
     top: 100px;
 
 }
+
 
 
 /*h5 {*/
@@ -252,6 +303,13 @@ img {
 /*    border-style: none;*/
 
 /*}*/
+
+
+.collapsible {
+    position: relative;
+    width: 100%;
+}
+
 
 /*a:hover+.box,*/
 

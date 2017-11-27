@@ -5,6 +5,7 @@ $(document).ready(function() {
  $('.button-collapse').sideNav('hide');
  $('.button-collapse').sideNav('destroy');
 
+
  $(".button-collapse").sideNav();
  $('.collapsible').collapsible();
  $('.button-collapse').sideNav({
@@ -14,156 +15,119 @@ $(document).ready(function() {
   draggable: true, // Choose whether you can drag to open on touch screens,
  });
 
+$(document).ready(function() {
+    var image = $("<img>").attr("src", "https://hyperallergic.com/wp-content/uploads/2016/12/whitehouseoldestphoto-720x527.jpg");
+    var imagePlace = $("#div1");
 
+    imagePlace.append(image);
 
+    //IMAGE DROPBOX
+    var dropbox = document.getElementById("dropbox");
+    dropbox.addEventListener("dragenter", dropHandler, false);
+    dropbox.addEventListener("dragexit", dropHandler, false);
+    dropbox.addEventListener("dragover", dropHandler, false);
+    dropbox.addEventListener("drop", drop, false);
 
+    function dropHandler(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        console.log("Handler working")
+    }
 
+    function drop(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        imageLink = evt.dataTransfer.getData('URL');
+        console.log(imageLink);
+        $("#dropbox").prepend('<img class="responsive-img" src="' + imageLink + '">');
+        console.log('<img src="' + imageLink + '">');
+    }
 
- //Global Variables
-
- var imageLink;
-
-
- //IMAGE DROPBOX
- var dropbox = document.getElementById("dropbox");
- dropbox.addEventListener("dragenter", noopHandler, false);
- dropbox.addEventListener("dragexit", noopHandler, false);
- dropbox.addEventListener("dragover", noopHandler, false);
- dropbox.addEventListener("drop", drop, false);
-
- function noopHandler(evt) {
-  evt.stopPropagation();
-  evt.preventDefault();
-  console.log("Handler working")
- }
-
- function drop(evt) {
-  evt.stopPropagation();
-  evt.preventDefault();
-  imageLink = evt.dataTransfer.getData('URL');
-  console.log(imageLink);
-  $("#dropbox").prepend('<img src="' + imageLink + '">');
-  console.log('<img src="' + imageLink + '">');
- }
- //DRAG GEORGE
- // $(document).on("mousedown", function() {
- //     var image = $('img').addClass("draggable");
- //     console.log(image);
- // });
-
- // $(document).on("mousedown", function() {
- //     $(".draggable").draggable();
- //     console.log("Am I draggable?");
- // });
-
- $("#dragMe").draggable();
-
- //Clear Image Div
-
- $("#resetDiv").on("click", function() {
-  $("#dropbox").empty();
-  $("#analysisDiv").val("");
-  $("#age").val("");
-  $("#sad").val("");
-  $("#neutral").val("");
-  $("#disgust").val("");
-  $("#anger").val("");
-  $("#surprise").val("");
-  $("#div1").empty();
- });
-
-
- //IMAGE SEARCH
- // $(document).on("mouseover", function() {
- //     $("img").attr("draggable", "true");
- //     $("img").attr("ondragstart", "drag(event)");
- //     console.log("Dragged");
- // });
- // $(document).on("mousedown", function() {
- //     $("img").attr("id", "drag1");
- //     console.log("where is the picture")
- // });
-
- // function allowDrop(ev) {
- //     ev.preventDefault();
- // }
-
- // function drag(ev) {
- //     ev.dataTransfer.setData("text", ev.target.id);
- //     console.log("Hey");
- // }
-
-
- // function drop(ev) {
- //     ev.preventDefault();
- //     var data = ev.dataTransfer.getData("URL");
- //     ev.target.appendChild(document.getElementById(data));
- //     console.log("Hi");
- // }
-
-
- // Initialize Firebase
- /* global firebase */
-
- var config = {
-  apiKey: "AIzaSyA04Li4Y2BJ6O54i1Tm3VgZx6XX1JibX1c",
-  authDomain: "polimotions.firebaseapp.com",
-  databaseURL: "https://polimotions.firebaseio.com",
-  projectId: "polimotions",
-  storageBucket: "polimotions.appspot.com",
-  messagingSenderId: "920170050300"
- };
 
  firebase.initializeApp(config);
 
+    //Clear Image Div
 
- var db = firebase.database();
- $("#run-search").on("click", function(event) {
-  event.preventDefault();
+    $("#resetDiv").on("click", function() {
+        $("#dropbox").empty();
+        $(".images").empty();
+        $("#name").empty();
+    });
 
-  var recentSearch = $("#searchTerm").val().trim();
-  $("#name").text(recentSearch);
-  db.ref().push({
-   recentSearch: recentSearch,
-  });
-
-  console.log(recentSearch);
-
-  $("#searchTerm").val("");
- });
-
- //FACE++ API
-
-
- db.ref().limitToLast(6).on("child_added", function(childSnapshot, prevChildKey) {
-  console.log(childSnapshot.val());
-
-  var recentSearch = childSnapshot.val().recentSearch;
-  var newDiv = $('<div>');
-  newDiv.append($('<p>').text(recentSearch));
-
-  $("#searches").prepend(newDiv);
- });
+    //Touchscreen Friendly Drag and Drop
+    // $(document).on("mouseover", function() {
+    //     $("img").attr("draggable", "true");
+    //     $("img").attr("ondragstart", "drag(event)");
+    //     console.log("Dragged");
+    // });
+    // $(document).on("mousedown", function() {
+    //     $("img").attr("id", "drag1");
+    //     console.log("where is the picture")
+    // });
 
 
- //FACE++ API
- $("#analysisButton").on("click", function() {
+
+    // Initialize Firebase
+    /* global firebase */
+
+    var config = {
+        apiKey: "AIzaSyA04Li4Y2BJ6O54i1Tm3VgZx6XX1JibX1c",
+        authDomain: "polimotions.firebaseapp.com",
+        databaseURL: "https://polimotions.firebaseio.com",
+        projectId: "polimotions",
+        storageBucket: "polimotions.appspot.com",
+        messagingSenderId: "920170050300"
+    };
+
+    firebase.initializeApp(config);
 
 
-  var imageURL = "https://cdn.history.com/sites/2/2013/11/George_Washington-AB.jpeg";
+    var db = firebase.database();
+    $("#run-search").on("click", function(event) {
+        event.preventDefault();
 
-  console.log(imageURL);
+        var recentSearch = $("#searchTerm").val().trim();
+        $("#name").text(recentSearch);
+        db.ref().push({
+            recentSearch: recentSearch,
+        });
 
-  var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
+        console.log(recentSearch);
 
-  var params = {
-   "api_key": "AKof96jqIYUIqbmI2TaF3-AJcURETpor",
-   "api_secret": "WbNCep4Ml1Ad_wTiItDTq7QhTEskPUYT",
-   "image_url": imageURL,
-   "return_attributes": "gender,age,emotion",
-  };
+        $("#searchTerm").val("");
+    });
 
-  $.ajax({ url: queryURL, method: "POST", data: params })
+
+    db.ref().limitToLast(6).on("child_added", function(childSnapshot, prevChildKey) {
+        console.log(childSnapshot.val());
+
+        var recentSearch = childSnapshot.val().recentSearch;
+        var newDiv = $('<div>');
+        newDiv.append($('<p>').text(recentSearch));
+
+        $("#searches").prepend(newDiv);
+    });
+
+    //FACE++ API
+    $("#analysisButton").on("click", function() {
+        $("#analysisDiv").val("");
+        $("#age").val("");
+        $("#sad").val("");
+        $("#neutral").val("");
+        $("#disgust").val("");
+        $("#anger").val("");
+        $("#surprise").val("");
+        $("#div1").empty();
+
+        var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
+
+        var params = {
+            "api_key": "AKof96jqIYUIqbmI2TaF3-AJcURETpor",
+            "api_secret": "WbNCep4Ml1Ad_wTiItDTq7QhTEskPUYT",
+            "image_url": imageLink,
+            "return_attributes": "gender,age,emotion",
+        };
+
 
    .done(function(response) {
     var results = response;
@@ -196,10 +160,10 @@ $(document).ready(function() {
    });
  });
 
- //IMAGE CAROUSEL
- $(document).ready(function() {
-  $('.carousel').carousel();
- });
+
+                var image = $("<img>").attr("src", imageLink);
+                var imagePlace = $("#div1");
+
 
  // var carouselImage = $(".carousel-item").attr("src");
 
@@ -207,7 +171,13 @@ $(document).ready(function() {
  //  $("#dropbox").prepend(carouselImage);
  // });
 
+
  // MOMENT JS FOR CURRENT DAY AND TIME UNDER NAV
  /*global moment*/
  $("#toptext").text(moment().format('MMMM Do, YYYY'));
+
+            });
+    });
+
+
 });
