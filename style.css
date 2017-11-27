@@ -1,45 +1,43 @@
 body {
-    background: url();
-    background: white;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: url("images/brickwall.png");
     font-family: 'Vollkorn SC', serif;
+
 }
+
+.container {
+    width: 97%;
+    /*padding-left: 10px;*/
+    /*padding-right: 20px;*/
+    margin: auto;
+
 
 nav {
     height: 165px;
     color: black;
+
 }
 
+/*Top of Page Container holding #polimotions img*/
+
 .black {
-    height: 30px;
+    /*height: 30px;*/
     background-color: black;
     z-index: 2000;
+
 }
+
 
 .galleria {
     height: 400px;
     width: 100%;
 }
 
+
 .nav-wrapper {
     background: white;
     background-size: cover;
     background-position: center;
     border-bottom: 4px double black;
-
-}
-
-.belownavdiv {
-    border-bottom: 4px double black;
-}
-
-#toptext {
-    font-size: 15px;
-    font-family: 'Convergence', sans-serif;
-    position: relative;
-    left: 480px;
 }
 
 #polimotions {
@@ -49,6 +47,28 @@ nav {
     position: relative;
     top: 40px;
 }
+
+
+/*Date Container and Text*/
+
+.belownavdiv {
+    border-bottom: 4px double black;
+}
+
+#toptext {
+    font-size: 15px;
+    font-family: 'Convergence', sans-serif;
+    position: relative;
+    /*left: 480px;*/
+    text-align: center;
+}
+
+
+/*SideNav*/
+
+#recent {
+    font-size: 18px;
+    font-weight: bold;
 
 .dropdown-content li>a,
 .dropdown-content li>span {
@@ -63,26 +83,42 @@ nav {
 
     border-style: none;
     margin-left: 5px;
-}
-
-.collapsible-header {
-    background: url();
-    background-size: cover;
-    border-bottom: 4px double #e0e0e0;
-
 
 }
 
-.lastheader {
-    border-bottom: none;
+#slide-out {
+    font-family: 'Vollkorn SC', serif;
 }
 
+#aboutNav,
+#instructionsNav,
+#recentNav {
+    padding: 20px;
+    line-height: 140%
+}
+
+#recentNav,
+#resourcesNav {
+    text-align: center;
+}
+
+#resourcesNav {
+    line-height: 100%;
+    padding: 0px;
+
+}
+
+/*Title of Image Container - appears after user hits search button*/
 
 #name {
     text-align: center;
     font-size: 22px;
-    border-right: 4px double #e0e0e0;
+    /*border-right: 4px double #e0e0e0;
+    */
 }
+
+
+/*Image and Analysis Results Container*/
 
 .divider {
     background-color: white;
@@ -90,43 +126,63 @@ nav {
     position: relative;
 }
 
+
 .divneed {
     border-right: 2px solid #e0e0e0;
     border-left: 2px solid #e0e0e0;
-    position: relative;
-    bottom: 30px;
+    /*position: relative;*/
+    /*bottom: 30px;*/
 }
 
-.container {
-    width: auto;
-    padding-left: 20px;
-}
-
-#recent,
-th {
-    font-size: 18px;
-    font-weight: bold;
-}
 
 #dropbox {
     border-bottom: 4px double #e0e0e0;
     border-top: 4px double #e0e0e0;
+    max-width: 450px;
+    height: 400px;
+    margin: auto;
+
+.container {
+    width: auto;
+    padding-left: 20px;
+
+}
+
+
+
+/*Top Articles Title and Collapsible Dropdown Containers*/
+
+.divider {
+    background-color: white;
+    border-bottom: 4px double #e0e0e0;
+    /*position: relative;*/
+    /*right: 7%;*/
+}
+
+.collapsible-header {
+    /*background: url();*/
+    background-size: cover;
+    border-bottom: 4px double #e0e0e0;
+
+    border-top: 4px double #e0e0e0;
     width: 400px;
     height: 200px;
+
 }
 
-.box {
-    display: block;
+.collapsible {
+    /*position: relative;*/
     width: 100%;
-    height: 750px;
+    right: 30px;
+}
+
+.lastheader {
+    border-bottom: none;
 }
 
 
-img {
-    width: 100%;
-    height: auto;
-}
 
+/*Buttons*/
 
 .btn {
     margin-bottom: 10px;
@@ -134,22 +190,60 @@ img {
     color: black;
 }
 
+#run-search {
+    float: left;
+}
+
+#resetDiv {
+    margin-top: 10px;
+}
+
 #analysisButton {
-    background-color: #ccc;
-    color: black;
+
+    margin-top: 10px;
+    /*    background-color: #ccc;*/
+    /*    color: black;*/
+
 }
 
 
-#menu {
-    bottom: 20px;
-    background-color: black;
+/*Do we need this img anymore???*/
+
+img {
+
+    width: 100%;
+
+    height: auto;
 }
 
+/*}*/
+
+.box {
+
+    display: block;
+
+    width: 100%;
+
+    height: 750px;
+
+}
+
+/*#menu {*/
+
+/*    bottom: 20px;*/
+
+/*    background-color: black;*/
+
+/*}*/
 
 .tap-target {
+
     background: white;
+
     color: black;
+
     line-height: 25px;
+
 }
 
 
@@ -159,32 +253,63 @@ img {
 }
 
 .tap-target-origin {
+
     top: 15%;
+
     left: 31%;
+
 }
 
 .tap-target-content {
+
     position: relative;
+
     top: 100px;
+
 }
 
-h5 {
-    position: relative;
-    bottom: 80px;
-    left: 60px;
-}
 
-#about {
-    position: relative;
-    bottom: 60px;
-    right: 20px;
-    width: 350px;
-}
+
+/*h5 {*/
+
+/*    position: relative;*/
+
+/*    bottom: 80px;*/
+
+/*    left: 60px;*/
+
+/*}*/
+
+/*#about {*/
+
+/*    position: relative;*/
+
+/*    bottom: 60px;*/
+
+/*    right: 20px;*/
+
+/*    width: 350px;*/
+
+/*}*/
+
+/*.collapsible {*/
+
+/*    position: relative;*/
+
+/*    width: 100%;*/
+
+/*    right: 30px;*/
+
+/*    border-style: none;*/
+
+/*}*/
+
 
 .collapsible {
     position: relative;
     width: 100%;
 }
+
 
 /*a:hover+.box,*/
 
