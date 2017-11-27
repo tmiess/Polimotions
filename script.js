@@ -62,6 +62,8 @@ $(document).ready(function() {
         $("#disgust").val("");
         $("#anger").val("");
         $("#surprise").val("");
+        $("#fear").val("");
+        $("#happiness").val("");
     });
 
     //Touchscreen Friendly Drag and Drop
