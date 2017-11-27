@@ -1,11 +1,12 @@
 $(document).ready(function() {
+    // MOMENT JS FOR CURRENT DAY AND TIME UNDER NAV
+    /*global moment*/
+    $("#toptext").text(moment().format('MMMM Do, YYYY'));
 
-    var imageLink;
     //SIDENAV
     $('.button-collapse').sideNav('show');
     $('.button-collapse').sideNav('hide');
     $('.button-collapse').sideNav('destroy');
-
 
     $(".button-collapse").sideNav();
     $('.collapsible').collapsible();
@@ -15,6 +16,13 @@ $(document).ready(function() {
         closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
         draggable: true, // Choose whether you can drag to open on touch screens,
     });
+
+
+
+    var image = $("<img>").attr("src", "https://hyperallergic.com/wp-content/uploads/2016/12/whitehouseoldestphoto-720x527.jpg");
+    var imagePlace = $("#div1");
+
+    imagePlace.append(image);
 
     //IMAGE DROPBOX
     var dropbox = document.getElementById("dropbox");
@@ -26,10 +34,11 @@ $(document).ready(function() {
     function dropHandler(evt) {
         evt.stopPropagation();
         evt.preventDefault();
-        console.log("Handler working")
+        console.log("Handler working");
     }
 
     function drop(evt) {
+
         evt.stopPropagation();
         evt.preventDefault();
         imageLink = evt.dataTransfer.getData('URL');
@@ -47,6 +56,14 @@ $(document).ready(function() {
         $("#dropbox").empty();
         $(".images").empty();
         $("#name").empty();
+        $("#age").val("");
+        $("#sad").val("");
+        $("#neutral").val("");
+        $("#disgust").val("");
+        $("#anger").val("");
+        $("#surprise").val("");
+        $("#fear").val("");
+        $("#happiness").val("");
     });
 
     //Touchscreen Friendly Drag and Drop
@@ -59,6 +76,8 @@ $(document).ready(function() {
     //     $("img").attr("id", "drag1");
     //     console.log("where is the picture")
     // });
+
+
 
     // Initialize Firebase
     /* global firebase */
@@ -88,39 +107,33 @@ $(document).ready(function() {
         console.log(recentSearch);
 
         $("#searchTerm").val("");
+
+
+
+        db.ref().limitToLast(6).on("child_added", function(childSnapshot, prevChildKey) {
+            console.log(childSnapshot.val());
+
+            var recentSearch = childSnapshot.val().recentSearch;
+            var newDiv = $('<div>');
+            newDiv.append($('<p>').text(recentSearch));
+
+            $("#searches").prepend(newDiv);
+        });
+
     });
-
-
-    db.ref().limitToLast(6).on("child_added", function(childSnapshot, prevChildKey) {
-        console.log(childSnapshot.val());
-
-        var recentSearch = childSnapshot.val().recentSearch;
-        var newDiv = $('<div>');
-        newDiv.append($('<p>').text(recentSearch));
-
-        $("#searches").prepend(newDiv);
-    });
-
     //FACE++ API
     $("#analysisButton").on("click", function() {
-        $("#analysisDiv").val("");
-        $("#age").val("");
-        $("#sad").val("");
-        $("#neutral").val("");
-        $("#disgust").val("");
-        $("#anger").val("");
-        $("#surprise").val("");
         $("#div1").empty();
 
         var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
 
         var params = {
-            "api_key": "AKof96jqIYUIqbmI2TaF3-AJcURETpor",
-            "api_secret": "WbNCep4Ml1Ad_wTiItDTq7QhTEskPUYT",
-            "image_url": imageLink,
-            "return_attributes": "gender,age,emotion",
-        };
-        $.ajax({ url: queryURL, method: "POST", data: params })
+                "api_key": "AKof96jqIYUIqbmI2TaF3-AJcURETpor",
+                "api_secret": "WbNCep4Ml1Ad_wTiItDTq7QhTEskPUYT",
+                "image_url": imageLink,
+                "return_attributes": "gender,age,emotion",
+            }
+
 
             .done(function(response) {
                 var results = response;
@@ -139,11 +152,6 @@ $(document).ready(function() {
                 var age = results.faces[0].attributes.age.value;
                 var gender = results.faces[0].attributes.gender.value;
 
-                var image = $("<img>").attr("src", imageLink);
-                var imagePlace = $("#div1");
-
-                imagePlace.append(image);
-
                 // results appear in html table
                 $("#age").text(age);
                 $("#gender").text(gender);
@@ -157,6 +165,12 @@ $(document).ready(function() {
 
             });
     });
+
+
+    var image = $("<img>").attr("src", imageLink);
+    var imagePlace = $("#div1");
+
+
     // var carouselImage = $(".carousel-item").attr("src");
 
     // $(".carousel-item").on("click", function() {
@@ -164,8 +178,6 @@ $(document).ready(function() {
     // });
 
 
-    // MOMENT JS FOR CURRENT DAY AND TIME UNDER NAV
-    /*global moment*/
-    $("#toptext").text(moment().format('MMMM Do, YYYY'));
+
 
 });
