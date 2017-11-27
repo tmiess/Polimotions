@@ -54,15 +54,23 @@ $("#run-search").on("click", function(event) {
     console.log("1/8 button works");
     event.preventDefault();
 
-    //$(".collapsible").empty();
-
     var searchTerm = $("#searchTerm").val().trim();
-    console.log("search term is: " + searchTerm);
-    var searchTerm = searchTerm.replace(/\s+/g, '%20');
-    var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&sources=politico&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
-    //var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&from=2014-11-15&sortBy=popularity&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
-    //var searchURL = "https://newsapi.org/v2/top-headlines?q=" + searchTerm + "&sources=wall-street-journal&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
-    console.log("2/8 search url is: " + searchURL);
+    console.log("check for input. searchTerm length is: " + searchTerm.length);
 
-    AJAXquery(searchURL);
+    if (searchTerm.length == 0) {
+        $("#run-search").text("Invalid Search");
+        setInterval(function() { $("#run-search").text("Submit"); }, 3000)
+    }
+
+    else {
+        console.log("search term is: " + searchTerm);
+
+        var searchTerm = searchTerm.replace(/\s+/g, '%20');
+        var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&sources=politico&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
+        //var searchURL = "https://newsapi.org/v2/everything?q=" + searchTerm + "&from=2014-11-15&sortBy=popularity&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
+        //var searchURL = "https://newsapi.org/v2/top-headlines?q=" + searchTerm + "&sources=wall-street-journal&apiKey=a3b7c632d41e45bcb47ccc17698fb653";
+        console.log("2/8 search url is: " + searchURL);
+
+        AJAXquery(searchURL);
+    }
 });
