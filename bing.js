@@ -1,16 +1,23 @@
  //Image Search
+
  var firstRow;
  var imageArray = [];
  var topicImage;
  var imageResultsDisplay;
- $("#run-search").on("click", function() {
+ var count = 0;
+ var results;
 
+ $("#run-search").on("click", function() {
+  results = [];
+  imageArray = [];
+  $(".gallery").empty();
+  $("#searchTerm").empty();
   event.preventDefault();
 
   var imageSearch = $("#searchTerm").val().trim();
   console.log("Your search is:" + imageSearch);
 
-  var queryURL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=" + imageSearch + "&count=10";
+  var queryURL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=" + imageSearch + "&count=4";
 
   $.ajax({
     url: queryURL,
@@ -24,20 +31,17 @@
    .done(function(response) {
     console.log(response);
 
-    var results = response.value;
+    results = response.value;
     console.log(results);
 
     for (var i = 0; i < results.length; i++) {
-     imageResultsDisplay = $('<img src="' + results[i].contentUrl + '"/>');
+     imageResultsDisplay = $('<img src="' + results[i].thumbnailUrl + '"/>');
+     // imageResultsDisplay.attr("href", results[i].contentUrl);
      imageArray.push(imageResultsDisplay);
     }
-    $(".galleria").append(imageArray);
-
-    function galleria() {
-     Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/themes/classic/galleria.classic.min.js');
-     Galleria.run('.galleria');
-    };
-    galleria();
+    $(".gallery").append(imageArray);
    });
+
+
  });
  

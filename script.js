@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var imageLink;
+
     // MOMENT JS FOR CURRENT DAY AND TIME UNDER NAV
     /*global moment*/
     $("#toptext").text(moment().format('MMMM Do, YYYY'));
@@ -19,10 +21,10 @@ $(document).ready(function() {
 
 
 
-    var image = $("<img>").attr("src", "https://hyperallergic.com/wp-content/uploads/2016/12/whitehouseoldestphoto-720x527.jpg");
-    var imagePlace = $("#div1");
+    // var image = $("<img>").attr("src", "https://hyperallergic.com/wp-content/uploads/2016/12/whitehouseoldestphoto-720x527.jpg");
+    // var imagePlace = $("#div1");
 
-    imagePlace.append(image);
+    // imagePlace.append(image);
 
     //IMAGE DROPBOX
     var dropbox = document.getElementById("dropbox");
@@ -47,8 +49,6 @@ $(document).ready(function() {
         console.log('<img src="' + imageLink + '">');
     }
 
-
-    firebase.initializeApp(config);
 
     //Clear Image Div
 
@@ -128,16 +128,18 @@ $(document).ready(function() {
         var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
 
         var params = {
-                "api_key": "AKof96jqIYUIqbmI2TaF3-AJcURETpor",
-                "api_secret": "WbNCep4Ml1Ad_wTiItDTq7QhTEskPUYT",
-                "image_url": imageLink,
-                "return_attributes": "gender,age,emotion",
-            }
+            "api_key": "AKof96jqIYUIqbmI2TaF3-AJcURETpor",
+            "api_secret": "WbNCep4Ml1Ad_wTiItDTq7QhTEskPUYT",
+            "image_url": imageLink,
+            "return_attributes": "gender,age,emotion",
+        };
 
+        $.ajax({ url: queryURL, method: "POST", data: params })
 
             .done(function(response) {
                 var results = response;
                 console.log(results);
+
 
                 // variables to catch emotions
                 var sadness = results.faces[0].attributes.emotion.sadness;
