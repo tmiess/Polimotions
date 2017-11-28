@@ -12,7 +12,7 @@ function AJAXquery(queryURL) {
         method: 'GET',
     }).done(function(result) {
         console.log(result);
-        
+
         var j = 0; //counts number of http denied
 
         // Loop through and provide the correct number of articles
@@ -32,17 +32,33 @@ function AJAXquery(queryURL) {
             console.log("8/8 url is: " + newURL);
 
             if (newURL.includes("http:")) {
-                console.log("////DO NOT DISPLAY ARTICLE////");
+                console.log("////FIX ARTICLE LINK AND DISPLAY////");
 
+                //fix article here:
                 j++;
                 console.log("http denied: " + j);
 
+                var fixedURL = newURL.replace("http", "https");
+                newLink.attr("href", fixedURL);
+
+                console.log("fixedURL is: " + fixedURL);
+
+                //create iframe for article display
+
+                var articleSection = $("<iframe>");
+
+                articleSection.addClass("box");
+                articleSection.attr("src", fixedURL);
+                articleSection.attr("frameborder", 0);
+                articleSection.attr("scrolling", "yes");
+                articleSection.attr("target", "_blank");
+
                 $("#title" + i).text(newTitle);
-                $("#article" + i).append(newLink);
+                $("#article" + i).empty().append(articleSection);
             }
 
             else {
-                console.log("////DISPLAY ARTICLE////");
+                console.log("////DIRECTLY DISPLAY ARTICLE////");
 
                 var articleSection = $("<iframe>");
 
@@ -50,6 +66,7 @@ function AJAXquery(queryURL) {
                 articleSection.attr("src", newURL);
                 articleSection.attr("frameborder", 0);
                 articleSection.attr("scrolling", "yes");
+                articleSection.attr("target", "_blank");
 
                 $("#title" + i).text(newTitle);
                 $("#article" + i).empty().append(articleSection);
