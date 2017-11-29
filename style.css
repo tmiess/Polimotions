@@ -4,12 +4,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    font-family: 'Vollkorn SC', serif;
+    font-family: 'Bungee', cursive;
 }
 
 nav {
     height: 165px;
     color: black;
+    font-family: 'Bungee', cursive;
 }
 
 img {
@@ -18,14 +19,21 @@ img {
     object-fit: contain;
 }
 
+h4,
+a {
+    font-family: 'Bungee', cursive;
+}
+
 h5 {
     position: relative;
     bottom: 80px;
     left: 60px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 p {
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .black {
@@ -39,7 +47,7 @@ p {
 }
 
 .nav-wrapper {
-    background: white;
+    background: black;
     background-size: cover;
     background-position: center;
     border-bottom: 4px double black;
@@ -47,7 +55,10 @@ p {
 }
 
 .belownavdiv {
-    border-bottom: 4px double black;
+    border: 10px double black;
+    background: black;
+    color: white;
+    border-width: 10px
 }
 
 .dropdown-content li>a,
@@ -132,6 +143,16 @@ p {
     width: 100%;
 }
 
+#center-text {
+    text-align: center;
+    color: grey;
+}
+
+#politicoLogo {
+    display: block;
+    margin: auto;
+    padding: 12px;
+}
 
 #recent,
 th {
@@ -159,6 +180,8 @@ th {
     text-align: center;
     font-size: 22px;
     border-right: 4px double #e0e0e0;
+    font-family: 'Bungee', cursive;
+
 }
 
 #analysisButton {
