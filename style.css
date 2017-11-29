@@ -4,12 +4,14 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    font-family: 'Vollkorn SC', serif;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 nav {
     height: 165px;
     color: black;
+    font-family: 'Open Sans', sans-serif;
 }
 
 img {
@@ -18,14 +20,21 @@ img {
     object-fit: contain;
 }
 
+h4,
+a {
+    font-family: 'Open Sans', sans-serif;
+}
+
 h5 {
     position: relative;
     bottom: 80px;
     left: 60px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 p {
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .black {
@@ -132,6 +141,15 @@ p {
     width: 100%;
 }
 
+#center-text {
+    text-align: center;
+}
+
+#politicoLogo {
+    display: block;
+    margin: auto;
+    padding: 10px;
+}
 
 #recent,
 th {
