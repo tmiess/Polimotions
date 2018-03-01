@@ -4,18 +4,14 @@ Helps users gauge the current mood surrounding political figures by providing to
 
 # Jump To
 
-[Introduction](#introduction)
-
-[Features](#features)
-
-- [Search](#search)
-- [Browse Articles](#browse-articles)
-- [Drag and Drop](#drag-and-drop)
-- [Analyze](#analyze)
-
-[Tools](#tools)
-
-[Authors](#authors)
+- [Introduction](#introduction)
+- [Features](#features)
+  - [Search](#search)
+  - [Browse Articles](#browse-articles)
+  - [Drag and Drop](#drag-and-drop)
+  - [Analyze](#analyze)
+- [Tools](#tools)
+- [Authors](#authors)
 
 # Introduction
 # Features
