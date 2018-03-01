@@ -35,9 +35,11 @@ Polimotions delivers trending aticles from Politico.com right to your fingertips
 ### Drag and Drop
 
 Inside the articles, you will find pictures of the politician(s) you are interested in.
+\
 ![drag](Polimotions/poli_drag.PNG)
 
 Drag and drop the image of your choice into the drop zone in the middle of the page.
+
 ![drop](Polimotions/poli_drop.PNG)
 ### Analyze
 Putting a fun twist on a usually mundane task, Polimotions uses *FacePlusPlus Facial Detection* technology to deliver an emotional analysis of your searched politician.
@@ -45,7 +47,7 @@ Putting a fun twist on a usually mundane task, Polimotions uses *FacePlusPlus Fa
 ![results](Polimotions/poli_results.PNG)
 As of now, results include estimates of age, gender, happiness, sadness, neutrality, fear, disgust, anger, and surprise.
 
-![results2](Polimotions/poli_results2.PNG)
+![results2](Polimotions/poli_results2.png)
 When you want Polimotions to perform a new analysis, just press the *clear* button and drag and drop a new image into the drop zone.
 
 ![clear](Polimotions/poli_clear.PNG)
