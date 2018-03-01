@@ -22,49 +22,67 @@ FInally, a fun and easy way to learn more about the current political climate! P
 
 Users can read instructions, learn how the app was made, see recent searches, and view reliable news sources by clicking the hamburger menu button.
 
-![menu](Polimotions/poli_menu.PNG)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tmiess/Polimotions/master/Polimotions/poli_menu.PNG" alt=""/>
+</p>
 
 # Features
 ### Search
 Simply type in the name of a politician and watch as the magic unfolds.
 
-![input](Polimotions/poli_input.PNG)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tmiess/Polimotions/master/Polimotions/poli_input.PNG" alt=""/>
+</p>
 
 ### Browse Articles
 Polimotions delivers trending aticles from Politico.com right to your fingertips.
 
-![articles](Polimotions/poli_articles.PNG)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tmiess/Polimotions/master/Polimotions/poli_articles.PNG" alt=""/>
+</p>
 
 ### Drag and Drop
 
 Inside the articles, you will find pictures of the politician(s) you are interested in.
 
-![drag](Polimotions/poli_drag.PNG)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tmiess/Polimotions/master/Polimotions/poli_drag.PNG" alt=""/>
+</p>
 
 Drag and drop the image of your choice into the drop zone in the middle of the page.
 
-![drop](Polimotions/poli_drop.PNG)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tmiess/Polimotions/master/Polimotions/poli_drop.PNG" alt=""/>
+</p>
 
 ### Analyze
 Putting a fun twist on a usually mundane task, Polimotions uses *FacePlusPlus Facial Detection* technology to deliver an emotional analysis of your searched politician.
 
-![results](Polimotions/poli_results.PNG)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tmiess/Polimotions/master/Polimotions/poli_results.PNG" alt=""/>
+</p>
 
 By hitting the *Run Analysis* button, you will see the results. As of now, results include estimates of age, gender, happiness, sadness, neutrality, fear, disgust, anger, and surprise.
 
-![results2](Polimotions/poli_results2.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tmiess/Polimotions/master/Polimotions/poli_results2.png" alt=""/>
+</p>
 
 When you want Polimotions to perform a new analysis, just press the *clear* button and drag and drop a new image into the drop zone.
 
-![clear](Polimotions/poli_clear.PNG)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tmiess/Polimotions/master/Polimotions/poli_clear.PNG" alt=""/>
+</p>
 
-# Built with:
+# Built with
 - Materialize CSS
-- AJAX5
+- JQuery
+- AJAX
 - News API
 - Politico
 - Face Plus Plus Cognitive Services
 - Github Pages
+
 # Authors
 Check out more work from those who [contributed](https://github.com/tmiess/Polimotions/graphs/contributors) to this project.
 
