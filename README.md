@@ -12,7 +12,7 @@ You can test our most recent update [here](https://tmiess.github.io/Polimotions/
   - [Browse Articles](#browse-articles)
   - [Drag and Drop](#drag-and-drop)
   - [Analyze](#analyze)
-- [Tools](#tools)
+- [Built With](#built-with)
 - [Authors](#authors)
 
 # Introduction
@@ -58,6 +58,13 @@ When you want Polimotions to perform a new analysis, just press the *clear* butt
 
 ![clear](Polimotions/poli_clear.PNG)
 
-# Tools
+# Built with:
+- Materialize CSS
+- AJAX5
+- News API
+- Politico
+- Face Plus Plus Cognitive Services
+- Github Pages
 # Authors
+Check out more work from those who [contributed](https://github.com/tmiess/Polimotions/graphs/contributors) to this project.
 
